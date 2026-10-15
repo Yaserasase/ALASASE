@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#12372a">
+<title>بقالتي الذكية | المنتجات والأسعار</title>
+<style>
+:root{--green:#12372a;--green2:#1d5942;--lime:#d8f36a;--bg:#f4f7f2;--card:#fff;--text:#17231c;--muted:#68756c;--line:#e2e9e1;--red:#b42318}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font-family:Tahoma,Arial,sans-serif;padding-bottom:92px}
+header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:22px 16px 24px;border-radius:0 0 25px 25px}
+.top{display:flex;align-items:center;gap:12px}.logo{width:52px;height:52px;border-radius:17px;background:var(--lime);color:var(--green);display:grid;place-items:center;font-size:27px;font-weight:bold}
+h1{font-size:22px;margin:0 0 5px}header p{margin:0;color:#d8e8dc;font-size:13px}
+.wrap{max-width:760px;margin:auto;padding:14px}.tools{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:2px 0 14px}
+button,.button{border:0;border-radius:13px;padding:13px 12px;font:inherit;font-weight:bold;cursor:pointer}
+.primary{background:var(--lime);color:var(--green)}.secondary{background:#e2eee4;color:var(--green)}.dark{background:var(--green);color:#fff}.danger{background:#ffebea;color:var(--red)}.small{padding:8px 10px;font-size:13px;border-radius:10px}
+.search{width:100%;border:1px solid var(--line);background:#fff;border-radius:14px;padding:14px;font:inherit;margin-bottom:12px;outline-color:var(--green2)}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:14px;box-shadow:0 3px 15px #173c2410}
+.panel h2{font-size:17px;margin:0 0 12px}.muted{color:var(--muted);font-size:13px;line-height:1.6}
+#scanner{width:100%;border-radius:14px;background:#101a14;max-height:300px;object-fit:cover;display:none}
+.row{display:flex;align-items:center;gap:8px}.row>*{min-width:0}.row .grow{flex:1}
+input,select,textarea{font:inherit;padding:12px;border:1px solid var(--line);border-radius:11px;width:100%;background:#fff;min-width:0}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.formgrid .full{grid-column:1/-1}
+.products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.product{background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;min-width:0}
+.product .emoji{height:75px;border-radius:12px;background:#eff5ec;display:grid;place-items:center;font-size:38px;margin-bottom:9px}
+.product h3{font-size:15px;margin:0 0 6px;overflow-wrap:anywhere}.barcode{font-size:11px;color:var(--muted);direction:ltr;text-align:right;overflow-wrap:anywhere}.price{font-size:17px;font-weight:bold;color:var(--green2);margin:8px 0}
+.product-actions{display:flex;gap:6px}.product-actions button{flex:1}
+.empty{text-align:center;padding:25px 12px;color:var(--muted);grid-column:1/-1}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#fff;border-top:1px solid var(--line);padding:11px 14px calc(11px + env(safe-area-inset-bottom));display:flex;align-items:center;gap:12px;z-index:10}
+.bottom .sum{flex:1}.bottom strong{display:block;color:var(--green);font-size:18px}.bottom small{color:var(--muted)}
+#cartItems{display:grid;gap:9px}.cartitem{display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding:8px 0}.cartitem .name{flex:1}.qty{display:flex;align-items:center;gap:7px}.qty button{padding:5px 9px;background:#e7f0e7;color:var(--green)}
+.modal{position:fixed;inset:0;background:#0008;z-index:20;display:none;align-items:flex-end;justify-content:center}.modal.open{display:flex}.sheet{width:100%;max-width:760px;background:var(--bg);border-radius:22px 22px 0 0;padding:18px;max-height:88vh;overflow:auto}.sheethead{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.sheethead h2{margin:0;font-size:19px}
+.notice{padding:10px 12px;background:#fff8d9;border:1px solid #f1e3a2;border-radius:12px;font-size:12px;line-height:1.6;margin-top:10px}
+hr{border:0;border-top:1px solid var(--line);margin:14px 0}
+footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}
+@media(min-width:600px){.products{grid-template-columns:repeat(3,minmax(0,1fr))}.modal{align-items:center}.sheet{border-radius:22px}.tools{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="top"><div class="logo">ب</div><div><h1>بقالتي الذكية</h1><p>امسح الباركود، اعرف السعر، واجمع مشترياتك بسهولة</p></div></div></header>
+<main class="wrap">
+  <section class="tools">
+    <button class="primary" id="scanBtn">▦ مسح باركود</button>
+    <button class="secondary" id="manualBtn">＋ إضافة منتج</button>
+    <button class="secondary" id="cartBtn">🛒 سلة المشتريات</button>
+    <button class="secondary" id="exportBtn">⬇ نسخة احتياطية</button>
+  </section>
+  <section class="panel" id="scannerPanel" hidden>
+    <h2>مسح الباركود بالكاميرا</h2>
+    <video id="scanner" playsinline muted></video>
+    <div id="scannerFallback" style="display:none;width:100%;overflow:hidden;border-radius:14px"></div>
+    <div id="scanMessage" class="muted">وجّه الكاميرا إلى الباركود. قد تحتاج للسماح باستخدام الكاميرا.</div>
+    <div class="row" style="margin-top:10px"><button class="dark" id="stopScan">إيقاف الكاميرا</button><button class="secondary" id="typeBarcode">إدخال الرقم يدوياً</button></div>
+    <div class="notice">المسح يحتاج متصفحاً يدعم الكاميرا. غالباً تعمل الكاميرا على HTTPS أو localhost. إذا لم تعمل، يمكنك إدخال رقم الباركود يدوياً.</div>
+  </section>
+  <section class="panel">
+    <h2>البحث عن منتج</h2>
+    <input id="search" class="search" placeholder="اكتب اسم المنتج أو رقم الباركود…" autocomplete="off">
+    <div class="row"><span class="muted grow" id="count">0 منتج</span><button class="small secondary" id="clearSearch">مسح البحث</button></div>
+  </section>
+  <section class="panel">
+    <div class="row" style="justify-content:space-between"><h2 style="margin:0">المنتجات والأسعار</h2><button class="small secondary" id="manageBtn">إدارة المنتجات</button></div>
+    <p class="muted">أضف المنتج وسعره مرة واحدة. سيبقى محفوظاً على هذا الجهاز للزيارات القادمة.</p>
+    <div id="products" class="products"></div>
+  </section>
+  <section class="panel">
+    <h2>كيف يعمل الباركود؟</h2>
+    <p class="muted">رقم الباركود عادةً يعرّف المنتج ولا يحتوي على سعره. لذلك عند مسح منتج جديد، أضف اسمه وسعره مرة واحدة. بعد ذلك سيظهر السعر تلقائياً عند مسح نفس الباركود. لا يحتاج هذا الإصدار إلى حساب أو قاعدة بيانات أونلاين.</p>
+  </section>
+  <footer>نسخة أولية محلية — البيانات محفوظة في متصفح هذا الجهاز فقط.</footer>
+</main>
+<div class="bottom"><div class="sum"><small id="cartCount">0 قطعة في السلة</small><strong id="total">0 ل.س</strong></div><button class="dark" id="checkoutBtn">عرض السلة ←</button></div>
+
+<div class="modal" id="productModal"><div class="sheet">
+  <div class="sheethead"><h2 id="productFormTitle">إضافة منتج</h2><button class="small danger" data-close="productModal">إغلاق ✕</button></div>
+  <form id="productForm">
+    <input type="hidden" id="editId">
+    <div class="formgrid">
+      <div class="full"><label for="pName" class="muted">اسم المنتج *</label><input id="pName" required placeholder="مثلاً: حليب كامل الدسم"></div>
+      <div class="full"><label for="pBarcode" class="muted">رقم الباركود</label><input id="pBarcode" inputmode="numeric" placeholder="امسح أو اكتب الرقم">
+        <button class="secondary small" type="button" id="scanBarcodeFromForm" style="margin-top:7px;width:100%">▦ مسح الباركود بالكاميرا</button>
+      </div>
+      <div><label for="pPrice" class="muted">السعر بالليرة السورية *</label><input id="pPrice" type="number" min="0" step="1" required placeholder="مثلاً 12000"></div>
+      <div><label for="pEmoji" class="muted">رمز المنتج</label><select id="pEmoji"><option>🛒</option><option>🥛</option><option>🥤</option><option>🍞</option><option>🍚</option><option>🧀</option><option>🍫</option><option>🧼</option><option>🥫</option><option>🍪</option><option>🧃</option><option>🧴</option><option>🍬</option><option>🥚</option></select></div>
+    </div>
+    <div class="full" style="margin-top:10px">
+      <label for="pPhoto" class="muted">صورة المنتج (اختياري)</label>
+      <input id="pPhoto" type="file" accept="image/*" capture="environment">
+      <img id="photoPreview" alt="معاينة صورة المنتج" style="display:none;width:100%;max-height:180px;object-fit:contain;background:#eef3ec;border-radius:12px;margin-top:8px">
+      <button class="secondary small" type="button" id="clearPhoto" style="margin-top:7px">إزالة الصورة</button>
+    </div>
+    <p class="muted">يمكنك مسح الباركود من هنا مباشرةً، والتقاط صورة للمنتج بكاميرا الجوال أو اختيار صورة من المعرض.</p>
+    <div class="row"><button class="dark grow" type="submit">حفظ المنتج</button><button class="secondary grow" type="button" id="saveAndAdd">حفظ وإضافة آخر</button></div>
+  </form>
+</div></div>
+
+<div class="modal" id="cartModal"><div class="sheet">
+  <div class="sheethead"><h2>🛒 سلة المشتريات</h2><button class="small danger" data-close="cartModal">إغلاق ✕</button></div>
+  <div id="cartItems"></div><hr>
+  <div class="row" style="justify-content:space-between"><strong>المجموع</strong><strong id="cartTotal">0 ل.س</strong></div>
+  <div style="margin-top:12px"><label class="muted" for="customerNote">ملاحظة (اختياري)</label><textarea id="customerNote" rows="2" placeholder="مثلاً: يرجى تجهيز الطلب…"></textarea></div>
+  <div class="row" style="margin-top:12px"><button class="dark grow" id="copyOrder">نسخ قائمة المشتريات</button><button class="danger" id="emptyCart">إفراغ السلة</button></div>
+  <p class="muted">النسخ يتيح لك إرسال القائمة عبر أي تطبيق. لا يوجد دفع إلكتروني في هذه النسخة.</p>
+</div></div>
+
+<div class="modal" id="manageModal"><div class="sheet">
+  <div class="sheethead"><h2>إدارة المنتجات</h2><button class="small danger" data-close="manageModal">إغلاق ✕</button></div>
+  <p class="muted">يمكنك تعديل الأسعار أو حذف المنتجات. البيانات محفوظة محلياً في هذا المتصفح.</p>
+  <div class="row"><button class="secondary grow" id="importBtn">استيراد نسخة احتياطية</button><button class="danger" id="deleteAll">حذف كل المنتجات</button></div>
+  <input type="file" id="importFile" accept="application/json,.json" hidden>
+  <hr><div id="manageList"></div>
+</div></div>
+<input type="file" id="imageFile" accept="image/*" hidden>
+
+<!-- قارئ احتياطي متوافق مع متصفحات الجوال -->
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const STORAGE_KEY = 'baqalati_smart_products_v1';
+  const CART_KEY = 'baqalati_smart_cart_v1';
+  let products = read(STORAGE_KEY, []);
+  let cart = read(CART_KEY, {});
+  let stream = null, scanLoop = false, detector = null, saveAndAdd = false;
+  let pendingFormScan = false, currentPhoto = '';
+  const fmt = n => Number(n||0).toLocaleString('en-US') + ' ل.س';
+  function read(key, fallback){try{const x=localStorage.getItem(key);return x?JSON.parse(x):fallback}catch{return fallback}}
+  function persist(){localStorage.setItem(STORAGE_KEY,JSON.stringify(products));localStorage.setItem(CART_KEY,JSON.stringify(cart));}
+  function id(){return 'p'+Date.now().toString(36)+Math.random().toString(36).slice(2,7)}
+  function openModal(id){$(id).classList.add('open')}
+  function closeModal(id){$(id).classList.remove('open')}
+  function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function render(){
+    const q=$('search').value.trim().toLowerCase();
+    const list=products.filter(p=>p.name.toLowerCase().includes(q)||(p.barcode||'').toLowerCase().includes(q));
+    $('count').textContent=list.length+' منتج';
+    $('products').innerHTML=list.length?list.map(p=>`<article class="product">${p.photo?`<div class="emoji" style="padding:0;overflow:hidden"><img src="${p.photo}" alt="" style="width:100%;height:100%;object-fit:cover"></div>`:`<div class="emoji">${esc(p.emoji||'🛒')}</div>`}<h3>${esc(p.name)}</h3><div class="barcode">${esc(p.barcode||'بدون باركود')}</div><div class="price">${fmt(p.price)}</div><div class="product-actions"><button class="dark small" data-add="${esc(p.id)}">＋ أضف</button><button class="secondary small" data-edit="${esc(p.id)}">تعديل</button></div></article>`).join(''):'<div class="empty">لا توجد منتجات هنا بعد.<br>اضغط «إضافة منتج» للبدء.</div>';
+    renderBottom();
+  }
+  function renderBottom(){
+    let count=0,total=0;
+    Object.entries(cart).forEach(([pid,qty])=>{const p=products.find(x=>x.id===pid);if(p&&qty>0){count+=qty;total+=p.price*qty}});
+    $('cartCount').textContent=count+' قطعة في السلة';$('total').textContent=fmt(total);$('cartTotal').textContent=fmt(total);
+  }
+  function addToCart(pid){if(!products.some(p=>p.id===pid))return;cart[pid]=(cart[pid]||0)+1;persist();render();toast('تمت الإضافة إلى السلة')}
+  function toast(msg){$('scanMessage').textContent=msg}
+  function formOpen(p=null){
+    $('productForm').reset();$('editId').value=p?.id||'';$('productFormTitle').textContent=p?'تعديل المنتج':'إضافة منتج';
+    $('pName').value=p?.name||'';$('pBarcode').value=p?.barcode||'';$('pPrice').value=p?.price??'';$('pEmoji').value=p?.emoji||'🛒';
+    currentPhoto=p?.photo||'';$('pPhoto').value='';updatePhotoPreview();openModal('productModal');
+  }
+  function saveProduct(keepOpen=false){
+    const name=$('pName').value.trim(),barcode=$('pBarcode').value.trim(),price=Number($('pPrice').value),editId=$('editId').value;
+    if(!name||$('pPrice').value===''||!Number.isFinite(price)||price<0){alert('يرجى إدخال اسم المنتج وسعر صحيح.');return false}
+    if(barcode){const duplicate=products.find(p=>p.barcode===barcode&&p.id!==editId);if(duplicate&&!confirm('هذا الباركود مسجل للمنتج «'+duplicate.name+'». هل تريد المتابعة؟'))return false}
+    if(editId){const p=products.find(p=>p.id===editId);if(p)Object.assign(p,{name,barcode,price,emoji:$('pEmoji').value,photo:currentPhoto})}
+    else products.unshift({id:id(),name,barcode,price,emoji:$('pEmoji').value,photo:currentPhoto});
+    persist();render();renderManage();if(keepOpen){$('productForm').reset();$('editId').value='';currentPhoto='';updatePhotoPreview();$('pName').focus()}else closeModal('productModal');
+    return true;
+  }
+  function renderCart(){
+    const entries=Object.entries(cart).filter(([pid,qty])=>qty>0&&products.some(p=>p.id===pid));
+    $('cartItems').innerHTML=entries.length?entries.map(([pid,qty])=>{const p=products.find(x=>x.id===pid);return `<div class="cartitem"><div class="name"><b>${esc(p.name)}</b><div class="muted">${fmt(p.price)} × ${qty} = ${fmt(p.price*qty)}</div></div><div class="qty"><button data-minus="${esc(pid)}">−</button><b>${qty}</b><button data-plus="${esc(pid)}">+</button></div></div>`}).join(''):'<div class="empty">السلة فارغة حالياً.</div>';
+    renderBottom();
+  }
+  function renderManage(){
+    $('manageList').innerHTML=products.length?products.map(p=>`<div class="cartitem"><div class="name"><b>${esc(p.name)}</b><div class="muted">${fmt(p.price)} · ${esc(p.barcode||'بدون باركود')}</div></div><button class="secondary small" data-edit="${esc(p.id)}">تعديل</button><button class="danger small" data-delete="${esc(p.id)}">حذف</button></div>`).join(''):'<p class="muted">لا توجد منتجات محفوظة.</p>';
+  }
+  let fallbackScanner = null, scanTimeout = null, usingFallback = false;
+  async function startScan(){
+    $('scannerPanel').hidden=false;
+    $('scanMessage').textContent='جارٍ تجهيز قارئ الباركود…';
+    if(!('BarcodeDetector' in window) || !navigator.mediaDevices?.getUserMedia){
+      startFallbackScanner();
+      return;
+    }
+    try{
+      let supportedFormats = ['ean_13','ean_8','upc_a','upc_e','code_128','code_39','itf','qr_code'];
+      if (typeof BarcodeDetector.getSupportedFormats === 'function') {
+        const available = await BarcodeDetector.getSupportedFormats();
+        supportedFormats = supportedFormats.filter(f => available.includes(f));
+      }
+      if (!supportedFormats.length) { startFallbackScanner(); return; }
+      detector = new BarcodeDetector({formats:supportedFormats});
+      $('scannerFallback').style.display='none';
+      $('scanner').style.display='block';
+      stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});
+      $('scanner').srcObject=stream;
+      await $('scanner').play();
+      scanLoop=true;
+      $('scanMessage').textContent='قرّب الباركود داخل الإطار، واجعل الإضاءة جيدة.';
+      scanTimeout = setTimeout(() => {
+        if (scanLoop) {
+          stopNativeCamera();
+          $('scanMessage').textContent='نجرب الآن قارئاً أكثر توافقاً مع الجوال…';
+          startFallbackScanner();
+        }
+      }, 7000);
+      scanFrame();
+    }catch(e){
+      stopNativeCamera();
+      startFallbackScanner();
+    }
+  }
+  async function scanFrame(){
+    if(!scanLoop||!detector)return;
+    try{
+      if ($('scanner').readyState >= 2) {
+        const codes=await detector.detect($('scanner'));
+        if(codes.length&&codes[0].rawValue){
+          const code=codes[0].rawValue;
+          stopScan();
+          handleBarcode(code);
+          return;
+        }
+      }
+    }catch(e){}
+    if(scanLoop) requestAnimationFrame(scanFrame);
+  }
+  function stopNativeCamera(){
+    scanLoop=false;
+    if(scanTimeout){clearTimeout(scanTimeout);scanTimeout=null}
+    if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}
+    $('scanner').srcObject=null;
+    $('scanner').style.display='none';
+  }
+  async function startFallbackScanner(){
+    stopNativeCamera();
+    if(!window.Html5Qrcode){
+      $('scannerFallback').style.display='none';
+      $('scanMessage').textContent='تعذرت قراءة الباركود. اتصل بالإنترنت لتحميل قارئ التوافق، أو أدخل الرقم يدوياً.';
+      alert('لم يعمل قارئ الباركود المدمج. يلزم اتصال بالإنترنت لتحميل قارئ متوافق، أو يمكنك إدخال الرقم يدوياً.');
+      return;
+    }
+    try{
+      usingFallback=true;
+      $('scanner').style.display='none';
+      $('scannerFallback').style.display='block';
+      $('scannerFallback').innerHTML='';
+      $('scanMessage').textContent='وجّه كاميرا الجوال إلى الباركود وثبّت المنتج لثوانٍ.';
+      fallbackScanner = new Html5Qrcode('scannerFallback', {verbose:false});
+      const cameras = await Html5Qrcode.getCameras();
+      if(!cameras || !cameras.length) throw new Error('no camera');
+      const backCamera = cameras.find(c => /back|rear|environment|خلفية/i.test(c.label)) || cameras[cameras.length-1];
+      await fallbackScanner.start(
+        backCamera.id,
+        {fps:12, qrbox:(viewWidth,viewHeight)=> {
+          const w=Math.max(180,Math.min(Math.floor(viewWidth*0.88),360));
+          const h=Math.max(90,Math.min(Math.floor(viewHeight*0.42),150));
+          return {width:w,height:h};
+        }, aspectRatio:1.6, formatsToSupport:[
+          Html5QrcodeSupportedFormats.EAN_13,Html5QrcodeSupportedFormats.EAN_8,
+          Html5QrcodeSupportedFormats.UPC_A,Html5QrcodeSupportedFormats.UPC_E,
+          Html5QrcodeSupportedFormats.CODE_128,Html5QrcodeSupportedFormats.CODE_39,
+          Html5QrcodeSupportedFormats.ITF,Html5QrcodeSupportedFormats.QR_CODE
+        ]},
+        decodedText => {
+          if(!usingFallback)return;
+          usingFallback=false;
+          stopScan();
+          handleBarcode(decodedText);
+        },
+        () => {}
+      );
+    }catch(e){
+      usingFallback=false;
+      $('scannerFallback').style.display='none';
+      $('scanMessage').textContent='لم تعمل الكاميرا. اسمح للمتصفح باستخدامها وافتح الموقع عبر HTTPS أو localhost.';
+      alert('تعذّر تشغيل قارئ الباركود. اسمح للمتصفح باستخدام الكاميرا، وتأكد من اتصال الإنترنت. يمكنك إدخال الرقم يدوياً.');
+    }
+  }
+  async function stopScan(){
+    usingFallback=false;
+    stopNativeCamera();
+    if(fallbackScanner){
+      try{await fallbackScanner.stop()}catch(e){}
+      try{await fallbackScanner.clear()}catch(e){}
+      fallbackScanner=null;
+    }
+    $('scannerFallback').innerHTML='';
+    $('scannerFallback').style.display='none';
+    $('scannerPanel').hidden=true;
+  }
+  function handleBarcode(code){
+    if(pendingFormScan){
+      pendingFormScan=false;
+      $('pBarcode').value=code;
+      openModal('productModal');
+      $('scanMessage').textContent='تم إدخال رقم الباركود في نموذج المنتج.';
+      return;
+    }
+    const p=products.find(p=>p.barcode===code);
+    if(p){$('search').value=code;render();addToCart(p.id);alert('المنتج: '+p.name+'\nالسعر: '+fmt(p.price)+'\nأُضيف إلى السلة.')}
+    else{formOpen();$('pBarcode').value=code;$('scanMessage').textContent='باركود جديد: '+code;alert('هذا الباركود غير مسجل. أدخل اسم المنتج وسعره ثم احفظه.')}
+  }
+  function manualBarcode(){const code=prompt('اكتب رقم الباركود:');if(code?.trim()){handleBarcode(code.trim())}}
+  function updatePhotoPreview(){
+    const img=$('photoPreview');
+    if(currentPhoto){img.src=currentPhoto;img.style.display='block'}else{img.removeAttribute('src');img.style.display='none'}
+  }
+  async function resizeImageToDataURL(file){
+    return new Promise((resolve,reject)=>{
+      const reader=new FileReader();
+      reader.onerror=reject;
+      reader.onload=()=>{
+        const img=new Image();
+        img.onerror=reject;
+        img.onload=()=>{
+          const max=700, scale=Math.min(1,max/Math.max(img.width,img.height));
+          const canvas=document.createElement('canvas');
+          canvas.width=Math.max(1,Math.round(img.width*scale));
+          canvas.height=Math.max(1,Math.round(img.height*scale));
+          canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);
+          resolve(canvas.toDataURL('image/jpeg',0.78));
+        };
+        img.src=reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
+  $('pPhoto').addEventListener('change',async e=>{
+    const file=e.target.files&&e.target.files[0];if(!file)return;
+    try{currentPhoto=await resizeImageToDataURL(file);updatePhotoPreview()}
+    catch(err){alert('تعذرت قراءة الصورة. جرّب صورة أخرى.')}
+  });
+  $('clearPhoto').addEventListener('click',()=>{currentPhoto='';$('pPhoto').value='';updatePhotoPreview()});
+  $('scanBarcodeFromForm').addEventListener('click',()=>{
+    pendingFormScan=true;
+    closeModal('productModal');
+    startScan();
+  });
+  $('scanBtn').addEventListener('click',startScan);$('stopScan').addEventListener('click',()=>{stopScan()});$('typeBarcode').addEventListener('click',manualBarcode);
+  $('manualBtn').addEventListener('click',()=>formOpen());$('productForm').addEventListener('submit',e=>{e.preventDefault();saveProduct(false)});
+  $('saveAndAdd').addEventListener('click',()=>saveProduct(true));$('search').addEventListener('input',render);$('clearSearch').addEventListener('click',()=>{$('search').value='';render()});
+  $('cartBtn').addEventListener('click',()=>{renderCart();openModal('cartModal')});$('checkoutBtn').addEventListener('click',()=>{renderCart();openModal('cartModal')});
+  $('manageBtn').addEventListener('click',()=>{renderManage();openModal('manageModal')});
+  document.addEventListener('click',e=>{
+    const t=e.target.closest('button');if(!t)return;
+    if(t.dataset.close)closeModal(t.dataset.close);
+    if(t.dataset.add)addToCart(t.dataset.add);
+    if(t.dataset.edit){const p=products.find(p=>p.id===t.dataset.edit);if(p){closeModal('manageModal');formOpen(p)}}
+    if(t.dataset.delete){const p=products.find(p=>p.id===t.dataset.delete);if(p&&confirm('حذف المنتج «'+p.name+'»؟')){products=products.filter(x=>x.id!==p.id);delete cart[p.id];persist();render();renderManage()}}
+    if(t.dataset.plus){cart[t.dataset.plus]=(cart[t.dataset.plus]||0)+1;persist();renderCart();render()}
+    if(t.dataset.minus){cart[t.dataset.minus]=Math.max(0,(cart[t.dataset.minus]||0)-1);if(!cart[t.dataset.minus])delete cart[t.dataset.minus];persist();renderCart();render()}
+  });
+  document.querySelectorAll('.modal').forEach(m=>m.addEventListener('click',e=>{if(e.target===m)closeModal(m.id)}));
+  $('emptyCart').addEventListener('click',()=>{if(confirm('هل تريد إفراغ السلة؟')){cart={};persist();renderCart();render()}});
+  $('copyOrder').addEventListener('click',async()=>{
+    const lines=Object.entries(cart).filter(([pid,q])=>q>0&&products.some(p=>p.id===pid)).map(([pid,q])=>{const p=products.find(x=>x.id===pid);return `${p.name} × ${q} — ${fmt(p.price*q)}`});
+    if(!lines.length){alert('السلة فارغة.');return}
+    const total=Object.entries(cart).reduce((s,[pid,q])=>{const p=products.find(x=>x.id===pid);return s+(p?p.price*q:0)},0);
+    const text='قائمة المشتريات:\\n'+lines.join('\\n')+'\\nالمجموع: '+fmt(total)+( $('customerNote').value.trim()?'\\nملاحظة: '+$('customerNote').value.trim():'');
+    try{await navigator.clipboard.writeText(text);alert('تم نسخ قائمة المشتريات. يمكنك لصقها في واتساب أو أي تطبيق.')}catch{prompt('انسخ قائمة المشتريات:',text)}
+  });
+  $('exportBtn').addEventListener('click',()=>{
+    const blob=new Blob([JSON.stringify({app:'بقالتي الذكية',version:1,products,cart},null,2)],{type:'application/json'});
+    const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='baqalati-backup.json';a.click();URL.revokeObjectURL(url);
+  });
+  $('importBtn').addEventListener('click',()=>$('importFile').click());
+  $('importFile').addEventListener('change',async e=>{
+    const file=e.target.files[0];if(!file)return;
+    try{const data=JSON.parse(await file.text());if(!Array.isArray(data.products))throw Error();if(!confirm('استيراد '+data.products.length+' منتج؟ سيحلّ محل المنتجات الحالية.'))return;products=data.products.map(p=>({id:p.id||id(),name:String(p.name||'منتج'),barcode:String(p.barcode||''),price:Math.max(0,Number(p.price)||0),emoji:p.emoji||'🛒'}));cart=data.cart&&typeof data.cart==='object'?data.cart:{};persist();render();renderManage();alert('تم استيراد النسخة الاحتياطية.')}catch{alert('الملف غير صالح أو لا يحتوي على نسخة بقالتي الذكية.')}finally{e.target.value=''}
+  });
+  $('deleteAll').addEventListener('click',()=>{if(confirm('تحذير: سيتم حذف جميع المنتجات والسلة من هذا الجهاز. هل أنت متأكد؟')){products=[];cart={};persist();render();renderManage()}});
+  render();
+})();
+</script>
+</body>
+</html>
