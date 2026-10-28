@@ -1,213 +1,1264 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#126b4f">
-<title>بقالتي | سوبرماركت</title>
-<style>
-:root{--green:#126b4f;--green2:#18845f;--bg:#f4f7f5;--card:#fff;--ink:#17231e;--muted:#68766f;--line:#e1e9e4;--red:#b42318;--gold:#f3c969}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:12px;padding:11px 14px;font-weight:700}.top{background:linear-gradient(135deg,#0d513d,#18845f);color:white;padding:20px 16px 18px;border-radius:0 0 24px 24px}.toprow{display:flex;align-items:center;justify-content:space-between;gap:12px;max-width:900px;margin:auto}.brand{display:flex;gap:11px;align-items:center}.logo{background:#ffffff20;border:1px solid #ffffff45;border-radius:15px;width:48px;height:48px;display:grid;place-items:center;font-size:27px}.brand h1{font-size:22px;margin:0}.brand p{margin:3px 0 0;color:#d4eee3;font-size:12px}.topbtn{background:#fff;color:var(--green);white-space:nowrap}.wrap{max-width:900px;margin:auto;padding:16px}.notice{font-size:12px;color:#4b6659;background:#e4f4eb;padding:10px 12px;border-radius:12px;margin-bottom:14px}.searchrow{display:flex;gap:8px;margin:12px 0}.field{width:100%;min-width:0;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;outline:none}.field:focus{border-color:var(--green2);box-shadow:0 0 0 3px #18845f1c}.categories{display:flex;gap:8px;overflow:auto;padding:2px 0 12px}.chip{background:#fff;border:1px solid var(--line);color:#42534a;white-space:nowrap;padding:9px 13px}.chip.active{background:var(--green);color:white;border-color:var(--green)}.summary{display:flex;gap:10px;margin:4px 0 15px}.stat{flex:1;background:white;border:1px solid var(--line);padding:12px;border-radius:14px}.stat strong{display:block;font-size:19px;color:var(--green)}.stat span{font-size:12px;color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.product{background:var(--card);border:1px solid var(--line);border-radius:17px;padding:12px;display:flex;flex-direction:column;min-width:0}.emoji{height:85px;border-radius:12px;background:#eef6f1;display:grid;place-items:center;font-size:40px;margin-bottom:10px}.product h3{font-size:15px;margin:0 0 4px;overflow-wrap:anywhere}.meta{font-size:11px;color:var(--muted);margin-bottom:9px}.price{font-weight:800;color:var(--green);font-size:17px;margin-top:auto}.price small{font-size:11px;font-weight:500;color:var(--muted)}.actions{display:flex;gap:6px;margin-top:10px}.add{background:var(--green);color:white;flex:1}.edit{background:#edf3ef;color:#2d5945;padding:10px}.empty{background:white;border:1px dashed #c8d8ce;border-radius:16px;text-align:center;padding:30px;color:var(--muted);grid-column:1/-1}.bottom{position:sticky;bottom:0;background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom));display:flex;justify-content:center;z-index:5}.bottominner{max-width:900px;width:100%;display:flex;gap:9px}.primary{background:var(--green);color:white;flex:1}.secondary{background:#eaf1ed;color:#244d3b}.danger{background:#fff0ef;color:var(--red)}.panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;margin:12px 0}.panel h2{font-size:18px;margin:0 0 12px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.formgrid label{font-size:12px;color:var(--muted);display:block}.formgrid input,.formgrid select{margin-top:5px}.wide{grid-column:1/-1}.modalback{position:fixed;inset:0;background:#091a12a6;z-index:20;display:none;align-items:flex-end;justify-content:center}.modalback.show{display:flex}.modal{background:var(--bg);width:100%;max-width:650px;max-height:90vh;overflow:auto;border-radius:22px 22px 0 0;padding:18px 16px calc(20px + env(safe-area-inset-bottom))}.modalhead{display:flex;justify-content:space-between;align-items:center;gap:10px}.modalhead h2{margin:0 0 12px;font-size:20px}.x{background:#e6ece8;padding:8px 12px}.listrow{display:flex;justify-content:space-between;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding:11px 0}.listrow:last-child{border:0}.small{font-size:12px;color:var(--muted)}.qty{display:flex;align-items:center;gap:9px}.qty button{padding:5px 10px;background:#eaf1ed}.cartline{display:flex;justify-content:space-between;gap:8px;padding:10px 0;border-bottom:1px solid var(--line)}.cartline:last-child{border:0}.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#18372a;color:#fff;padding:10px 15px;border-radius:12px;z-index:40;display:none;max-width:90%;text-align:center}.foot{text-align:center;color:var(--muted);font-size:11px;padding:22px 0 90px}video{width:100%;border-radius:14px;background:#111;margin-top:10px} @media(min-width:650px){.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.top{padding-top:25px}.emoji{height:100px}}@media(max-width:360px){.brand h1{font-size:19px}.topbtn{padding:10px}.formgrid{grid-template-columns:1fr}.wide{grid-column:auto}}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#126b4f" />
+  <title>بقالتي | سوبرماركت</title>
+  <style>
+    :root {
+      --green: #126b4f;
+      --green-2: #18845f;
+      --bg: #f4f7f5;
+      --card: #ffffff;
+      --card-2: #eef7f3;
+      --ink: #17231e;
+      --muted: #68766f;
+      --line: #e1e9e4;
+      --red: #b42318;
+      --gold: #f3c969;
+      --shadow: 0 18px 45px rgba(18, 107, 79, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
+      background: linear-gradient(180deg, #f3f7f5 0%, #edf5f0 100%);
+      color: var(--ink);
+    }
+    button, input, select { font: inherit; }
+    button {
+      border: 0;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+    .top {
+      background: linear-gradient(135deg, var(--green), var(--green-2));
+      color: white;
+      padding: 20px 16px 18px;
+      box-shadow: 0 14px 30px rgba(18, 107, 79, 0.18);
+    }
+    .toprow {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 48px;
+      height: 48px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.15);
+      display: grid;
+      place-items: center;
+      font-size: 27px;
+      border: 1px solid rgba(255,255,255,0.18);
+    }
+    .brand h1 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+    .brand p {
+      margin: 4px 0 0;
+      color: rgba(255,255,255,0.8);
+      font-size: 0.8rem;
+    }
+    .topbtn {
+      background: rgba(255,255,255,0.12);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.18);
+      font-weight: 700;
+    }
+    .topbtn:hover { background: rgba(255,255,255,0.18); }
+
+    .wrap {
+      max-width: 960px;
+      margin: 18px auto 70px;
+      padding: 0 16px;
+    }
+
+    .hero {
+      background: var(--card);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 18px 18px 10px;
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+    }
+    .hero h2 {
+      margin: 0 0 14px;
+      font-size: 1.05rem;
+      color: var(--green);
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(120px, 1fr));
+      gap: 12px;
+    }
+    .mini-stat {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fefefe 0%, #f5faf7 100%);
+      border-radius: 18px;
+      padding: 14px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .mini-stat strong {
+      font-size: 1.4rem;
+      color: var(--green);
+    }
+    .mini-stat span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .notice {
+      background: #ecf8f1;
+      color: #1f5d46;
+      border: 1px solid #cfeae0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      margin: 18px 0 12px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .searchrow {
+      display: flex;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    .field {
+      width: 100%;
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: #fff;
+      border-radius: 14px;
+      padding: 12px 14px;
+      outline: none;
+      transition: 0.2s ease;
+    }
+    .field:focus {
+      border-color: var(--green-2);
+      box-shadow: 0 0 0 3px rgba(24, 132, 95, 0.12);
+    }
+
+    .secondary {
+      background: #edf5f0;
+      color: var(--green);
+      border-radius: 14px;
+      padding: 11px 16px;
+      font-weight: 700;
+    }
+    .secondary:hover { background: #e4f0ea; }
+    .primary {
+      background: var(--green);
+      color: white;
+      border-radius: 14px;
+      padding: 12px 18px;
+      font-weight: 700;
+    }
+    .primary:hover { background: var(--green-2); }
+    .danger {
+      background: #fff0f0;
+      color: var(--red);
+      border-radius: 14px;
+      padding: 10px 14px;
+      font-weight: 700;
+    }
+    .danger:hover { background: #ffe4e4; }
+
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 14px 0 4px;
+    }
+    .chip {
+      background: white;
+      border: 1px solid var(--line);
+      color: #425952;
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    .chip.active {
+      background: var(--green);
+      color: white;
+      border-color: var(--green);
+    }
+
+    .summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 18px 0 16px;
+    }
+    .stat {
+      flex: 1 1 160px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 12px 16px;
+      box-shadow: 0 8px 28px rgba(32, 51, 44, 0.05);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.35rem;
+      color: var(--green);
+    }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+    .product {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      min-height: 230px;
+      padding: 12px;
+      box-shadow: 0 8px 24px rgba(19, 38, 31, 0.04);
+    }
+    .emoji {
+      height: 86px;
+      display: grid;
+      place-items: center;
+      font-size: 42px;
+      border-radius: 14px;
+      background: #edf8f3;
+      margin-bottom: 10px;
+    }
+    .product h3 {
+      margin: 0 0 6px;
+      font-size: 1.05rem;
+      overflow-wrap: anywhere;
+    }
+    .meta {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 0.77rem;
+    }
+    .price {
+      font-weight: 800;
+      color: var(--green);
+      font-size: 1.1rem;
+      margin-top: auto;
+    }
+    .small {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin: 2px 0 8px;
+    }
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .add {
+      flex: 1;
+      background: var(--green);
+      color: white;
+      border-radius: 12px;
+      padding: 10px 8px;
+      font-weight: 700;
+    }
+    .edit {
+      background: #edf3ff;
+      color: #254497;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-weight: 700;
+    }
+    .empty {
+      background: #fff;
+      border: 1px dashed #c7d4cf;
+      border-radius: 16px;
+      padding: 32px 20px;
+      text-align: center;
+      color: var(--muted);
+      grid-column: 1 / -1;
+    }
+
+    .bottom {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(12px);
+      border-top: 1px solid var(--line);
+      z-index: 15;
+    }
+    .bottominner {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 10px 16px 20px;
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+    .bottom button {
+      min-width: 160px;
+    }
+
+    .modalback {
+      position: fixed;
+      inset: 0;
+      background: rgba(9, 18, 15, 0.58);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      z-index: 40;
+    }
+    .modalback.show { display: flex; }
+    .modal {
+      width: min(100%, 670px);
+      max-height: 90vh;
+      overflow: auto;
+      background: var(--card);
+      border-radius: 24px;
+      padding: 18px 16px 16px;
+      box-shadow: 0 28px 70px rgba(6, 17, 13, 0.22);
+    }
+    .modalhead {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .modalhead h2 {
+      margin: 0;
+      font-size: 1.4rem;
+    }
+    .x {
+      width: 36px;
+      height: 36px;
+      border-radius: 12px;
+      background: #ebeef0;
+      color: var(--ink);
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 14px;
+      margin: 12px 0;
+    }
+    .panel h2 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+    .formgrid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(160px, 1fr));
+      gap: 12px;
+    }
+    label {
+      display: block;
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .wide { grid-column: 1 / -1; }
+    .listrow {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+    }
+    .listrow:last-child { border-bottom: 0; }
+    .listrow strong { font-size: 0.95rem; }
+    .smalltext {
+      color: var(--muted);
+      font-size: 0.76rem;
+      margin-top: 4px;
+    }
+    .actions-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .cart-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      border-bottom: 1px solid var(--line);
+      padding: 10px 0;
+    }
+    .cart-line:last-child { border-bottom: 0; }
+    .qty {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #f5f9f7;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 4px 6px;
+      font-weight: 700;
+    }
+    .qty button {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: white;
+      color: var(--green);
+      font-size: 1.1rem;
+      border: 1px solid var(--line);
+    }
+    .cart-total {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 800;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+    .toast {
+      position: fixed;
+      bottom: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(24, 34, 28, 0.92);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 12px;
+      display: none;
+      z-index: 60;
+      font-weight: 700;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+    }
+
+    video { width: 100%; border-radius: 16px; background: #111; }
+    @media (max-width: 640px) {
+      .stats-grid { grid-template-columns: repeat(2, minmax(120px, 1fr)); }
+      .formgrid { grid-template-columns: 1fr; }
+      .bottominner { justify-content: stretch; }
+      .bottom button { flex: 1; }
+    }
+  </style>
 </head>
 <body>
-<header class="top"><div class="toprow"><div class="brand"><div class="logo">🛒</div><div><h1 id="storeTitle">بقالتي</h1><p>سوبرماركتك اليومية — إدارة محلية على جهازك</p></div></div><button class="topbtn" onclick="openAdmin()">⚙️ الإدارة</button></div></header>
-<main class="wrap">
-<div class="notice">💾 تتضمن النسخة مواد تجريبية وأسعاراً أولية قابلة للتعديل. تُحفظ المنتجات والأسعار والسلة على هذا الجهاز في هذا المتصفح. لا يوجد اتصال بخادم أو نشر أونلاين في هذه النسخة.</div>
-<div class="searchrow"><input id="search" class="field" placeholder="ابحث عن مادة أو امسح/اكتب الباركود…" oninput="render()"><button class="secondary" onclick="openScanner()">▦ مسح</button></div>
-<div class="categories" id="categories"></div>
-<div class="summary"><div class="stat"><strong id="productCount">0</strong><span>مادة معروضة</span></div><div class="stat"><strong id="cartCount">0</strong><span>قطعة في السلة</span></div><div class="stat"><strong id="cartTotal">0</strong><span>مجموع السلة (ل.س)</span></div></div>
-<div class="grid" id="products"></div>
-<div class="foot">نسخة تجريبية محلية • العملة: الليرة السورية • يمكنك تعديل اسم المتجر والمواد من لوحة الإدارة</div>
-</main>
-<div class="bottom"><div class="bottominner"><button class="primary" onclick="openCart()">🧺 عرض السلة <span id="bottomTotal">—</span></button><button class="secondary" onclick="exportData()">نسخة احتياطية</button><button class="secondary" onclick="document.getElementById('importFile').click()">استعادة</button><input type="file" id="importFile" accept="application/json" hidden onchange="importData(event)"></div></div>
-<div class="modalback" id="adminModal"><section class="modal"><div class="modalhead"><h2>⚙️ لوحة التحكم</h2><button class="x" onclick="closeModal('adminModal')">✕</button></div>
-<div class="panel"><h2>إعدادات المتجر</h2><div class="formgrid"><label class="wide">اسم السوبرماركت<input class="field" id="storeNameInput" placeholder="مثال: بقالة العسسي"></label><button class="primary wide" onclick="saveStoreName()">حفظ اسم المتجر</button></div></div>
-<div class="panel"><h2 id="formTitle">➕ إضافة مادة جديدة</h2><input id="editId" type="hidden"><div class="formgrid">
-<label>اسم المادة<input class="field" id="pName" placeholder="مثال: حليب كامل الدسم"></label>
-<label>السعر (ليرة سورية)<input class="field" id="pPrice" type="number" min="0" step="1" placeholder="السعر"></label>
-<label>القسم<select class="field" id="pCategory"><option>مواد غذائية</option><option>ألبان وأجبان</option><option>مشروبات</option><option>منظفات</option><option>معلبات</option><option>سكاكر وتسالي</option><option>خضار وفواكه</option><option>مخبوزات</option><option>أخرى</option></select></label>
-<label>الباركود (اختياري)<input class="field" id="pBarcode" inputmode="numeric" placeholder="رقم الباركود"></label>
-<label>الكمية المتوفرة (اختياري)<input class="field" id="pStock" type="number" min="0" placeholder="مثلاً 10"></label>
-<label>رمز المادة<select class="field" id="pEmoji"><option value="🛍️">🛍️ كيس</option><option value="🥛">🥛 حليب</option><option value="🧀">🧀 أجبان</option><option value="🥤">🥤 مشروبات</option><option value="🍚">🍚 أرز وحبوب</option><option value="🍪">🍪 بسكويت</option><option value="🍫">🍫 شوكولا</option><option value="🧴">🧴 منظفات</option><option value="🥫">🥫 معلبات</option><option value="🍎">🍎 فواكه</option><option value="🍞">🍞 خبز</option><option value="🧃">🧃 عصير</option><option value="🧼">🧼 صابون</option></select></label>
-<button class="primary" onclick="saveProduct()">حفظ المادة</button><button class="secondary" onclick="resetForm()">تفريغ الحقول</button></div></div>
-<div class="panel"><h2>📦 المواد المسجلة</h2><div id="adminList"></div></div>
-<div class="panel"><h2>🔐 تغيير كلمة مرور الإدارة</h2><div class="formgrid"><label class="wide">كلمة المرور الحالية<input class="field" id="oldAdminPassword" type="password" autocomplete="current-password"></label><label class="wide">كلمة المرور الجديدة (4 أحرف/أرقام على الأقل)<input class="field" id="newAdminPassword" type="password" autocomplete="new-password"></label><label class="wide">تأكيد كلمة المرور الجديدة<input class="field" id="confirmAdminPassword" type="password" autocomplete="new-password"></label><button class="primary wide" onclick="changeAdminPassword()">حفظ كلمة المرور الجديدة</button></div><p class="small">هذه حماية محلية داخل المتصفح وليست نظام أمان مناسباً للنشر التجاري أونلاين. عند النشر سنضيف تسجيل دخول آمناً على الخادم.</p><button class="danger" onclick="resetAll()">حذف كل بيانات المتجر</button></div>
-</section></div>
-<div class="modalback" id="passwordModal"><section class="modal" style="max-width:430px"><div class="modalhead"><h2>🔐 تحقق الإدارة</h2><button class="x" onclick="closeModal('passwordModal')">✕</button></div><div class="panel"><p class="small">أدخل كلمة مرور الإدارة للمتابعة.</p><input id="adminPasswordInput" class="field" type="password" autocomplete="current-password" placeholder="كلمة مرور الإدارة"><p id="passwordError" class="small" style="color:#b42318;display:none">كلمة المرور غير صحيحة.</p><button class="primary" style="width:100%;margin-top:10px" onclick="verifyAdminPassword()">تحقق وافتح لوحة الإدارة</button><p class="small" style="margin-top:12px">كلمة المرور الأولية لأول تشغيل: 1234. غيّرها بعد الدخول.</p></div></section></div>
-<div class="modalback" id="cartModal"><section class="modal"><div class="modalhead"><h2>🧺 سلة المشتريات</h2><button class="x" onclick="closeModal('cartModal')">✕</button></div><div id="cartItems"></div><div class="panel"><div style="display:flex;justify-content:space-between;font-weight:800"><span>المجموع</span><span id="modalTotal">0 ل.س</span></div><p class="small">السلة محفوظة على هذا الجهاز فقط. لا يتم إرسال طلب أو دفع إلكتروني في النسخة المحلية.</p><button class="primary" style="width:100%" onclick="clearCart()">إفراغ السلة</button></div></section></div>
-<div class="modalback" id="scannerModal"><section class="modal"><div class="modalhead"><h2>▦ قراءة الباركود</h2><button class="x" onclick="stopScanner()">✕</button></div><p class="small">يمكنك إدخال الرقم يدوياً دائماً. تشغيل الكاميرا يعتمد على دعم المتصفح؛ غالباً تحتاج صفحة HTTPS بعد النشر.</p><div class="searchrow"><input class="field" id="manualBarcode" inputmode="numeric" placeholder="اكتب رقم الباركود"><button class="primary" onclick="useBarcode()">بحث</button></div><button class="secondary" onclick="startScanner()" style="width:100%">تشغيل الكاميرا</button><video id="video" playsinline hidden></video><p id="scanStatus" class="small"></p></section></div>
-<div class="toast" id="toast"></div>
-<script>
-const KEY='baqalati_local_v1';
-const seed=[
-{id:'s1',name:'رز',price:18000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🍚'},
-{id:'s2',name:'سكر',price:14000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'s3',name:'زيت نباتي',price:28000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'s4',name:'شاي',price:22000,category:'مشروبات',barcode:'',stock:'',emoji:'🍵'},
-{id:'s5',name:'حليب',price:9000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'s6',name:'لبنة',price:12000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧀'},
-{id:'s7',name:'مياه',price:3000,category:'مشروبات',barcode:'',stock:'',emoji:'💧'},
-{id:'s8',name:'عصير',price:6000,category:'مشروبات',barcode:'',stock:'',emoji:'🧃'},
-{id:'s9',name:'بسكويت',price:4000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍪'},
-{id:'s10',name:'شوكولا',price:7000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍫'},
-{id:'s11',name:'سائل جلي',price:10000,category:'منظفات',barcode:'',stock:'',emoji:'🧴'},
-{id:'s12',name:'معجون بندورة',price:5000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto13',name:'رز مصري',price:18000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🍚'},
-{id:'auto14',name:'رز بسمتي',price:32000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🍚'},
-{id:'auto15',name:'برغل ناعم',price:12000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🌾'},
-{id:'auto16',name:'برغل خشن',price:12000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🌾'},
-{id:'auto17',name:'عدس أحمر',price:15000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫘'},
-{id:'auto18',name:'عدس أسود',price:16000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫘'},
-{id:'auto19',name:'حمص حب',price:17000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫘'},
-{id:'auto20',name:'فاصولياء بيضاء',price:22000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫘'},
-{id:'auto21',name:'فريكة',price:25000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🌾'},
-{id:'auto22',name:'طحين',price:10000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🌾'},
-{id:'auto23',name:'سميد',price:9000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🌾'},
-{id:'auto24',name:'نشا',price:7000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto25',name:'معكرونة',price:8000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🍝'},
-{id:'auto26',name:'شعيرية',price:6000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🍝'},
-{id:'auto27',name:'ملح',price:3000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto28',name:'فلفل أسود',price:9000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto29',name:'كمون',price:7000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto30',name:'بهارات مشكلة',price:10000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto31',name:'كركم',price:7000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto32',name:'قرفة',price:8000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto33',name:'سكر ناعم',price:15000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto34',name:'دبس رمان',price:18000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto35',name:'خل أبيض',price:6000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto36',name:'زيت زيتون',price:65000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫒'},
-{id:'auto37',name:'زيت ذرة',price:30000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto38',name:'سمنة نباتية',price:25000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🧈'},
-{id:'auto39',name:'طحينة',price:22000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto40',name:'دبس فليفلة',price:16000,category:'مواد غذائية',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto41',name:'حليب طويل الأجل',price:9000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'auto42',name:'حليب بودرة',price:45000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'auto43',name:'لبن',price:7000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'auto44',name:'لبن عيران',price:5000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'auto45',name:'لبنة بلدية',price:18000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧀'},
-{id:'auto46',name:'جبنة بيضاء',price:25000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧀'},
-{id:'auto47',name:'جبنة قشقوان',price:55000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧀'},
-{id:'auto48',name:'جبنة مثلثات',price:15000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧀'},
-{id:'auto49',name:'زبدة',price:22000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🧈'},
-{id:'auto50',name:'قشطة',price:12000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥛'},
-{id:'auto51',name:'بيض',price:22000,category:'ألبان وأجبان',barcode:'',stock:'',emoji:'🥚'},
-{id:'auto52',name:'مياه صغيرة',price:2000,category:'مشروبات',barcode:'',stock:'',emoji:'💧'},
-{id:'auto53',name:'مياه كبيرة',price:4000,category:'مشروبات',barcode:'',stock:'',emoji:'💧'},
-{id:'auto54',name:'كولا',price:6000,category:'مشروبات',barcode:'',stock:'',emoji:'🥤'},
-{id:'auto55',name:'ليموناضة',price:6000,category:'مشروبات',barcode:'',stock:'',emoji:'🥤'},
-{id:'auto56',name:'عصير برتقال',price:7000,category:'مشروبات',barcode:'',stock:'',emoji:'🧃'},
-{id:'auto57',name:'عصير تفاح',price:7000,category:'مشروبات',barcode:'',stock:'',emoji:'🧃'},
-{id:'auto58',name:'شراب مركز',price:18000,category:'مشروبات',barcode:'',stock:'',emoji:'🧃'},
-{id:'auto59',name:'قهوة سريعة',price:25000,category:'مشروبات',barcode:'',stock:'',emoji:'☕'},
-{id:'auto60',name:'قهوة مطحونة',price:30000,category:'مشروبات',barcode:'',stock:'',emoji:'☕'},
-{id:'auto61',name:'نسكافيه',price:22000,category:'مشروبات',barcode:'',stock:'',emoji:'☕'},
-{id:'auto62',name:'شاي أخضر',price:18000,category:'مشروبات',barcode:'',stock:'',emoji:'🍵'},
-{id:'auto63',name:'متة',price:20000,category:'مشروبات',barcode:'',stock:'',emoji:'🍵'},
-{id:'auto64',name:'كاكاو',price:15000,category:'مشروبات',barcode:'',stock:'',emoji:'☕'},
-{id:'auto65',name:'تونة',price:18000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto66',name:'سردين',price:12000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto67',name:'فول مدمس',price:7000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto68',name:'حمص معلب',price:8000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto69',name:'ذرة معلبة',price:9000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto70',name:'فطر معلب',price:12000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto71',name:'بازلاء معلبة',price:8000,category:'معلبات',barcode:'',stock:'',emoji:'🥫'},
-{id:'auto72',name:'زيتون أخضر',price:15000,category:'معلبات',barcode:'',stock:'',emoji:'🫒'},
-{id:'auto73',name:'مخلل خيار',price:10000,category:'معلبات',barcode:'',stock:'',emoji:'🥒'},
-{id:'auto74',name:'كاتشب',price:10000,category:'معلبات',barcode:'',stock:'',emoji:'🍅'},
-{id:'auto75',name:'مايونيز',price:14000,category:'معلبات',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto76',name:'خردل',price:9000,category:'معلبات',barcode:'',stock:'',emoji:'🫙'},
-{id:'auto77',name:'مرق دجاج مكعبات',price:6000,category:'معلبات',barcode:'',stock:'',emoji:'🧂'},
-{id:'auto78',name:'بسكويت سادة',price:4000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍪'},
-{id:'auto79',name:'بسكويت محشو',price:6000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍪'},
-{id:'auto80',name:'ويفر',price:5000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍫'},
-{id:'auto81',name:'شوكولا بالحليب',price:8000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍫'},
-{id:'auto82',name:'علكة',price:2000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍬'},
-{id:'auto83',name:'حلوى جيلي',price:4000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍬'},
-{id:'auto84',name:'شيبس بطاطا',price:5000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍟'},
-{id:'auto85',name:'فوشار',price:5000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍿'},
-{id:'auto86',name:'بزر دوار الشمس',price:10000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🌻'},
-{id:'auto87',name:'فستق سوداني',price:12000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🥜'},
-{id:'auto88',name:'تمر',price:18000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🌴'},
-{id:'auto89',name:'راحة',price:9000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍬'},
-{id:'auto90',name:'كعك',price:7000,category:'سكاكر وتسالي',barcode:'',stock:'',emoji:'🍪'},
-{id:'auto91',name:'سائل جلي',price:10000,category:'منظفات',barcode:'',stock:'',emoji:'🧴'},
-{id:'auto92',name:'مسحوق غسيل',price:25000,category:'منظفات',barcode:'',stock:'',emoji:'🧺'},
-{id:'auto93',name:'منعم أقمشة',price:18000,category:'منظفات',barcode:'',stock:'',emoji:'🧴'},
-{id:'auto94',name:'كلور',price:7000,category:'منظفات',barcode:'',stock:'',emoji:'🧴'},
-{id:'auto95',name:'منظف أرضيات',price:12000,category:'منظفات',barcode:'',stock:'',emoji:'🧹'},
-{id:'auto96',name:'منظف زجاج',price:10000,category:'منظفات',barcode:'',stock:'',emoji:'🪟'},
-{id:'auto97',name:'إسفنجة جلي',price:3000,category:'منظفات',barcode:'',stock:'',emoji:'🧽'},
-{id:'auto98',name:'أكياس قمامة',price:6000,category:'منظفات',barcode:'',stock:'',emoji:'🗑️'},
-{id:'auto99',name:'مناديل ورقية',price:8000,category:'منظفات',barcode:'',stock:'',emoji:'🧻'},
-{id:'auto100',name:'ورق تواليت',price:12000,category:'منظفات',barcode:'',stock:'',emoji:'🧻'},
-{id:'auto101',name:'صابون يدين',price:7000,category:'منظفات',barcode:'',stock:'',emoji:'🧼'},
-{id:'auto102',name:'شامبو',price:18000,category:'منظفات',barcode:'',stock:'',emoji:'🧴'},
-{id:'auto103',name:'معجون أسنان',price:12000,category:'منظفات',barcode:'',stock:'',emoji:'🪥'},
-{id:'auto104',name:'فرشاة أسنان',price:6000,category:'منظفات',barcode:'',stock:'',emoji:'🪥'},
-{id:'auto105',name:'حفاضات أطفال',price:45000,category:'منظفات',barcode:'',stock:'',emoji:'👶'},
-{id:'auto106',name:'فوط صحية',price:18000,category:'منظفات',barcode:'',stock:'',emoji:'🧼'},
-{id:'auto107',name:'تفاح',price:10000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍎'},
-{id:'auto108',name:'موز',price:12000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍌'},
-{id:'auto109',name:'برتقال',price:9000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍊'},
-{id:'auto110',name:'ليمون',price:8000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍋'},
-{id:'auto111',name:'بطاطا',price:6000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🥔'},
-{id:'auto112',name:'بندورة',price:7000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍅'},
-{id:'auto113',name:'خيار',price:7000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🥒'},
-{id:'auto114',name:'بصل',price:5000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🧅'},
-{id:'auto115',name:'ثوم',price:15000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🧄'},
-{id:'auto116',name:'جزر',price:6000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🥕'},
-{id:'auto117',name:'خس',price:5000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🥬'},
-{id:'auto118',name:'فليفلة',price:9000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🫑'},
-{id:'auto119',name:'عنب',price:14000,category:'خضار وفواكه',barcode:'',stock:'',emoji:'🍇'},
-{id:'auto120',name:'خبز عربي',price:3000,category:'مخبوزات',barcode:'',stock:'',emoji:'🫓'},
-{id:'auto121',name:'توست',price:7000,category:'مخبوزات',barcode:'',stock:'',emoji:'🍞'},
-{id:'auto122',name:'كعك بالسمسم',price:8000,category:'مخبوزات',barcode:'',stock:'',emoji:'🥯'},
-{id:'auto123',name:'كرواسان',price:6000,category:'مخبوزات',barcode:'',stock:'',emoji:'🥐'},
-{id:'auto124',name:'خميرة فورية',price:5000,category:'مخبوزات',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto125',name:'بيكنغ باودر',price:4000,category:'مخبوزات',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto126',name:'فانيليا',price:3000,category:'مخبوزات',barcode:'',stock:'',emoji:'🛍️'},
-{id:'auto127',name:'بطاريات',price:8000,category:'أخرى',barcode:'',stock:'',emoji:'🔋'},
-{id:'auto128',name:'ولاعة',price:3000,category:'أخرى',barcode:'',stock:'',emoji:'🔥'},
-{id:'auto129',name:'أكواب بلاستيك',price:5000,category:'أخرى',barcode:'',stock:'',emoji:'🥤'},
-{id:'auto130',name:'أطباق بلاستيك',price:6000,category:'أخرى',barcode:'',stock:'',emoji:'🍽️'},
-{id:'auto131',name:'ورق ألمنيوم',price:10000,category:'أخرى',barcode:'',stock:'',emoji:'🧻'},
-{id:'auto132',name:'نايلون تغليف',price:7000,category:'أخرى',barcode:'',stock:'',emoji:'🛍️'}
-];
-let state=load(), activeCat='الكل', cart={}, stream=null, scanTimer=null;
-function load(){try{let saved=JSON.parse(localStorage.getItem(KEY));if(saved&&Array.isArray(saved.products)){const byId=new Map(seed.map(p=>[p.id,{...p}]));saved.products.forEach(p=>byId.set(p.id,{...(byId.get(p.id)||{}),...p}));return {...saved,storeName:saved.storeName||'بقالتي',products:[...byId.values()],cart:saved.cart||{},adminPassword:saved.adminPassword||'1234'}}}catch(e){}return {storeName:'بقالتي',products:seed.map(p=>({...p})),cart:{},adminPassword:'1234'}}
-function persist(){localStorage.setItem(KEY,JSON.stringify(state));}
-function money(n){return Number(n||0).toLocaleString('en-US')+' ل.س'}
-function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
-function toast(t){let e=document.getElementById('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',2300)}
-function render(){document.getElementById('storeTitle').textContent=state.storeName||'بقالتي';let q=document.getElementById('search').value.trim().toLowerCase();let cats=['الكل',...new Set(state.products.map(p=>p.category||'أخرى'))];document.getElementById('categories').innerHTML=cats.map(c=>`<button class="chip ${c===activeCat?'active':''}" onclick="setCat('${esc(c)}')">${esc(c)}</button>`).join('');let items=state.products.filter(p=>(activeCat==='الكل'||p.category===activeCat)&&(!q||p.name.toLowerCase().includes(q)||String(p.barcode||'').includes(q)));document.getElementById('products').innerHTML=items.length?items.map(p=>`<article class="product"><div class="emoji">${esc(p.emoji||'🛍️')}</div><h3>${esc(p.name)}</h3><div class="meta">${esc(p.category||'أخرى')}${p.stock!==''&&p.stock!=null?' • المتوفر: '+esc(p.stock):''}</div><div class="price">${money(p.price)} <small>/ قطعة</small></div><div class="actions"><button class="add" onclick="addCart('${p.id}')">＋ أضف للسلة</button><button class="edit" title="تعديل المادة" onclick="editProduct('${p.id}')">✎</button></div></article>`).join(''):'<div class="empty">لا توجد مواد مطابقة. يمكنك إضافتها من لوحة الإدارة.</div>';document.getElementById('productCount').textContent=items.length;let count=Object.values(state.cart||{}).reduce((a,b)=>a+b,0),total=cartTotal();document.getElementById('cartCount').textContent=count;document.getElementById('cartTotal').textContent=Number(total).toLocaleString('en-US');document.getElementById('bottomTotal').textContent=money(total)}
-function setCat(c){activeCat=c;render()}
-function cartTotal(){return Object.entries(state.cart||{}).reduce((sum,[id,n])=>{let p=state.products.find(x=>x.id===id);return sum+(p?Number(p.price)*n:0)},0)}
-function addCart(id){state.cart[id]=(state.cart[id]||0)+1;persist();render();toast('تمت إضافة المادة إلى السلة')}
-let adminAuthenticated=false;
-function openAdmin(){document.getElementById('adminPasswordInput').value='';document.getElementById('passwordError').style.display='none';document.getElementById('passwordModal').classList.add('show');setTimeout(()=>document.getElementById('adminPasswordInput').focus(),80)}
-function verifyAdminPassword(){const entered=document.getElementById('adminPasswordInput').value;if(entered===(state.adminPassword||'1234')){adminAuthenticated=true;closeModal('passwordModal');document.getElementById('storeNameInput').value=state.storeName||'';renderAdmin();document.getElementById('adminModal').classList.add('show')}else{document.getElementById('passwordError').style.display='block'}}
-function changeAdminPassword(){if(!adminAuthenticated)return toast('تحقق من كلمة المرور أولاً');const old=document.getElementById('oldAdminPassword').value,nw=document.getElementById('newAdminPassword').value,cf=document.getElementById('confirmAdminPassword').value;if(old!==(state.adminPassword||'1234'))return toast('كلمة المرور الحالية غير صحيحة');if(nw.length<4)return toast('اجعل كلمة المرور 4 أحرف أو أرقام على الأقل');if(nw!==cf)return toast('تأكيد كلمة المرور غير مطابق');state.adminPassword=nw;persist();['oldAdminPassword','newAdminPassword','confirmAdminPassword'].forEach(id=>document.getElementById(id).value='');toast('تم تغيير كلمة مرور الإدارة')}
-function renderAdmin(){document.getElementById('adminList').innerHTML=state.products.length?state.products.map(p=>`<div class="listrow"><div style="min-width:0"><strong>${esc(p.emoji||'🛍️')} ${esc(p.name)}</strong><div class="small">${money(p.price)} • ${esc(p.category)}${p.barcode?' • باركود: '+esc(p.barcode):''}</div></div><div style="display:flex;gap:5px"><button class="secondary" onclick="editProduct('${p.id}')">تعديل</button><button class="danger" onclick="deleteProduct('${p.id}')">حذف</button></div></div>`).join(''):'<p class="small">لا توجد مواد بعد.</p>'}
-function saveStoreName(){state.storeName=document.getElementById('storeNameInput').value.trim()||'بقالتي';persist();render();toast('تم حفظ اسم المتجر')}
-function saveProduct(){let id=document.getElementById('editId').value,name=document.getElementById('pName').value.trim(),price=Number(document.getElementById('pPrice').value);if(!name){toast('اكتب اسم المادة أولاً');return}if(document.getElementById('pPrice').value===''||!Number.isFinite(price)||price<0){toast('أدخل سعراً صحيحاً');return}let p={id:id||'p'+Date.now(),name,price,category:document.getElementById('pCategory').value,barcode:document.getElementById('pBarcode').value.trim(),stock:document.getElementById('pStock').value,emoji:document.getElementById('pEmoji').value};let ix=state.products.findIndex(x=>x.id===id);if(ix>=0)state.products[ix]=p;else state.products.unshift(p);persist();resetForm();render();renderAdmin();toast(ix>=0?'تم تعديل المادة والسعر':'تمت إضافة المادة')}
-function editProduct(id){let p=state.products.find(x=>x.id===id);if(!p)return;document.getElementById('editId').value=p.id;document.getElementById('pName').value=p.name;document.getElementById('pPrice').value=p.price;document.getElementById('pCategory').value=p.category||'أخرى';document.getElementById('pBarcode').value=p.barcode||'';document.getElementById('pStock').value=p.stock??'';document.getElementById('pEmoji').value=p.emoji||'🛍️';document.getElementById('formTitle').textContent='✏️ تعديل مادة';document.getElementById('adminModal').classList.add('show');document.querySelector('#adminModal .panel:nth-of-type(2)').scrollIntoView({behavior:'smooth',block:'start'})}
-function resetForm(){['editId','pName','pPrice','pBarcode','pStock'].forEach(id=>document.getElementById(id).value='');document.getElementById('pCategory').value='مواد غذائية';document.getElementById('pEmoji').value='🛍️';document.getElementById('formTitle').textContent='➕ إضافة مادة جديدة'}
-function deleteProduct(id){let p=state.products.find(x=>x.id===id);if(!p||!confirm('حذف المادة «'+p.name+'»؟'))return;state.products=state.products.filter(x=>x.id!==id);delete state.cart[id];persist();render();renderAdmin();toast('تم حذف المادة')}
-function resetAll(){if(!confirm('سيتم حذف جميع المواد والسلة وإعادة البيانات التجريبية. هل أنت متأكد؟'))return;state={storeName:'بقالتي',products:seed.map(p=>({...p})),cart:{},adminPassword:state.adminPassword||'1234'};persist();render();renderAdmin();resetForm();toast('تمت إعادة البيانات')}
-function openCart(){renderCart();document.getElementById('cartModal').classList.add('show')}
-function renderCart(){let rows=Object.entries(state.cart||{}).filter(([id,n])=>n>0).map(([id,n])=>({p:state.products.find(p=>p.id===id),n,id})).filter(x=>x.p);document.getElementById('cartItems').innerHTML=rows.length?rows.map(({p,n,id})=>`<div class="cartline"><div><strong>${esc(p.emoji||'🛍️')} ${esc(p.name)}</strong><div class="small">${money(p.price)} × ${n} = ${money(p.price*n)}</div></div><div class="qty"><button onclick="changeQty('${id}',-1)">−</button><strong>${n}</strong><button onclick="changeQty('${id}',1)">＋</button></div></div>`).join(''):'<div class="empty">السلة فارغة حالياً</div>';document.getElementById('modalTotal').textContent=money(cartTotal())}
-function changeQty(id,d){state.cart[id]=(state.cart[id]||0)+d;if(state.cart[id]<=0)delete state.cart[id];persist();render();renderCart()}
-function clearCart(){if(confirm('هل تريد إفراغ السلة؟')){state.cart={};persist();render();renderCart()}}
-function closeModal(id){document.getElementById(id).classList.remove('show');if(id==='adminModal')adminAuthenticated=false}
-function exportData(){let blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='baqalati-backup.json';a.click();URL.revokeObjectURL(url);toast('تم تجهيز النسخة الاحتياطية')}
-function importData(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let s=JSON.parse(r.result);if(!Array.isArray(s.products))throw 0;if(!confirm('استبدال البيانات الحالية بمحتوى النسخة الاحتياطية؟'))return;state={storeName:s.storeName||'بقالتي',products:s.products,cart:s.cart||{}};persist();render();toast('تمت استعادة البيانات')}catch(err){toast('ملف النسخة الاحتياطية غير صالح')}e.target.value=''};r.readAsText(f)}
-function openScanner(){document.getElementById('scannerModal').classList.add('show');document.getElementById('manualBarcode').value='';document.getElementById('scanStatus').textContent='اكتب الباركود يدوياً أو جرّب تشغيل الكاميرا.'}
-function useBarcode(){let v=document.getElementById('manualBarcode').value.trim();if(!v)return toast('أدخل رقم الباركود');document.getElementById('search').value=v;closeModal('scannerModal');render();let p=state.products.find(p=>String(p.barcode||'')===v);if(p)toast('تم العثور على: '+p.name);else toast('لم يُسجّل هذا الباركود بعد')}
-async function startScanner(){let video=document.getElementById('video'),status=document.getElementById('scanStatus');if(!('BarcodeDetector'in window)){status.textContent='هذا المتصفح لا يدعم قارئ الباركود المدمج. استخدم خانة الإدخال اليدوي أو افتح الموقع بعد نشره على HTTPS مع قارئ متوافق.';return}try{stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:{ideal:'environment'}},audio:false});video.srcObject=stream;video.hidden=false;await video.play();let detector=new BarcodeDetector({formats:['ean_13','ean_8','upc_a','upc_e','code_128','code_39','qr_code']});status.textContent='وجّه الكاميرا إلى الباركود…';scanTimer=setInterval(async()=>{try{let codes=await detector.detect(video);if(codes.length){let val=codes[0].rawValue;document.getElementById('manualBarcode').value=val;stopScanner(false);useBarcode()}}catch(e){}},450)}catch(e){status.textContent='تعذر تشغيل الكاميرا. امنح إذن الكاميرا أو استخدم الإدخال اليدوي.'}}
-function stopScanner(close=true){if(scanTimer)clearInterval(scanTimer);scanTimer=null;if(stream){stream.getTracks().forEach(t=>t.stop());stream=null}let v=document.getElementById('video');v.pause();v.srcObject=null;v.hidden=true;if(close)closeModal('scannerModal')}
-document.querySelectorAll('.modalback').forEach(m=>m.addEventListener('click',e=>{if(e.target===m){if(m.id==='scannerModal')stopScanner();else m.classList.remove('show')}}));
-render();
-</script>
+  <header class="top">
+    <div class="toprow">
+      <div class="brand">
+        <div class="logo">🛒</div>
+        <div>
+          <h1 id="storeTitle">بقالتي</h1>
+          <p>سوبرماركتك اليومية — إدارة أسهل</p>
+        </div>
+      </div>
+      <button class="topbtn" onclick="openAdmin()">لوحة الإدارة</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <h2>نظرة سريعة</h2>
+      <div class="stats-grid">
+        <div class="mini-stat">
+          <strong id="statsProducts">0</strong>
+          <span>منتج مسجل</span>
+        </div>
+        <div class="mini-stat">
+          <strong id="statsCart">0</strong>
+          <span>عناصر في السلة</span>
+        </div>
+        <div class="mini-stat">
+          <strong id="statsTotal">0</strong>
+          <span>إجمالي السلة</span>
+        </div>
+        <div class="mini-stat">
+          <strong id="statsLowStock">0</strong>
+          <span>مخزون منخفض</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="notice">💾 النسخة الحالية تحفظ بياناتك محلياً في المتصفح، كما تدعم البحث، التصفية، إضافة المنتج، وتعديل المخزون بسهولة.</div>
+
+    <div class="searchrow">
+      <input id="search" class="field" placeholder="ابحث عن مادة أو امسح/اكتب الباركود…" oninput="render()" />
+      <button class="secondary" onclick="openScanner()">ماسح</button>
+    </div>
+
+    <div class="categories" id="categories"></div>
+
+    <div class="summary">
+      <div class="stat"><strong id="productCount">0</strong><span>مادة معروضة</span></div>
+      <div class="stat"><strong id="cartCount">0</strong><span>قطعة في السلة</span></div>
+      <div class="stat"><strong id="cartTotal">0</strong><span>إجمالي السلة (ل.س)</span></div>
+    </div>
+
+    <div class="grid" id="products"></div>
+    <div class="footer" style="margin-top:18px; text-align:center; color:var(--muted); font-size:0.82rem;">نسخة تجريبية محلية • العملة: الليرة السورية • يمكنك تعديل اسم المتجر والمواد من لوحة الإدارة</div>
+  </main>
+
+  <div class="bottom">
+    <div class="bottominner">
+      <button class="primary" onclick="openCart()">🧺 عرض السلة <span id="bottomTotal">—</span></button>
+      <button class="secondary" onclick="exportData()">⬇️ حفظ نسخة</button>
+      <input type="file" id="importFile" accept="application/json" hidden onchange="importData(event)" />
+      <button class="secondary" onclick="document.getElementById('importFile').click()">⬆️ استيراد</button>
+    </div>
+  </div>
+
+  <div class="modalback" id="adminModal">
+    <section class="modal">
+      <div class="modalhead">
+        <h2>⚙️ لوحة التحكم</h2>
+        <button class="x" onclick="closeModal('adminModal')">✕</button>
+      </div>
+
+      <div class="panel">
+        <h2>إعدادات المتجر</h2>
+        <div class="formgrid">
+          <label class="wide">
+            اسم السوبرماركت
+            <input class="field" id="storeNameInput" placeholder="مثال: بقالتي" />
+          </label>
+          <button class="primary wide" onclick="saveStoreName()">حفظ اسم المتجر</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2 id="formTitle">➕ إضافة مادة جديدة</h2>
+        <input id="editId" type="hidden" />
+        <div class="formgrid">
+          <label>اسم المادة
+            <input class="field" id="pName" placeholder="مثال: حليب كامل الدسم" />
+          </label>
+          <label>السعر (ليرة سورية)
+            <input class="field" id="pPrice" type="number" min="0" step="1" placeholder="السعر" />
+          </label>
+          <label>القسم
+            <select class="field" id="pCategory">
+              <option>مواد غذائية</option>
+              <option>ألبان وأجبان</option>
+              <option>مشروبات</option>
+              <option>منظفات</option>
+              <option>معلبات</option>
+              <option>سكاكر وتسالي</option>
+              <option>خضار وفواكه</option>
+              <option>مخبوزات</option>
+              <option>أخرى</option>
+            </select>
+          </label>
+          <label>الباركود (اختياري)
+            <input class="field" id="pBarcode" inputmode="numeric" placeholder="رقم الباركود" />
+          </label>
+          <label>الكمية المتوفرة (اختياري)
+            <input class="field" id="pStock" type="number" min="0" placeholder="مثلاً 10" />
+          </label>
+          <label>رمز المادة
+            <select class="field" id="pEmoji">
+              <option value="🛍️">🛍️ كيس</option>
+              <option value="🥛">🥛 حليب</option>
+              <option value="🧀">🧀 أجبان</option>
+              <option value="🍞">🍞 خبز</option>
+              <option value="🥤">🥤 مشروبات</option>
+              <option value="🍎">🍎 فواكه</option>
+              <option value="🥬">🥬 خضار</option>
+              <option value="🍚">🍚 رز</option>
+              <option value="🍪">🍪 بسكويت</option>
+              <option value="🧴">🧴 منظف</option>
+              <option value="🥫">🥫 معلبات</option>
+              <option value="☕">☕ قهوة</option>
+            </select>
+          </label>
+        </div>
+        <div class="actions-row">
+          <button class="primary" onclick="saveProduct()">حفظ المادة</button>
+          <button class="secondary" onclick="resetForm()">تفريغ الحقول</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>📦 المواد المسجلة</h2>
+        <div id="adminList"></div>
+      </div>
+
+      <div class="panel">
+        <h2>🔐 تغيير كلمة مرور الإدارة</h2>
+        <div class="formgrid">
+          <label class="wide">كلمة المرور الحالية
+            <input class="field" id="oldAdminPassword" type="password" placeholder="كلمة المرور الحالية" />
+          </label>
+          <label class="wide">كلمة المرور الجديدة
+            <input class="field" id="newAdminPassword" type="password" placeholder="كلمة المرور الجديدة" />
+          </label>
+          <label class="wide">تأكيد كلمة المرور الجديدة
+            <input class="field" id="confirmAdminPassword" type="password" placeholder="تأكيد كلمة المرور الجديدة" />
+          </label>
+          <button class="primary wide" onclick="changeAdminPassword()">تحديث كلمة المرور</button>
+        </div>
+        <p class="smalltext">ملاحظة: كلمة المرور الافتراضية للنظام هي 1234.</p>
+        <button class="danger wide" onclick="resetAll()" style="margin-top:12px; width:100%;">إعادة تعيين البيانات التجريبية</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="modalback" id="passwordModal">
+    <section class="modal" style="max-width:430px;">
+      <div class="modalhead">
+        <h2>🔐 تحقق الإدارة</h2>
+        <button class="x" onclick="closeModal('passwordModal')">✕</button>
+      </div>
+      <div class="panel">
+        <p class="smalltext">أدخل كلمة مرور الإدارة للوصول إلى لوحة التحكم.</p>
+        <input id="adminPasswordInput" class="field" type="password" placeholder="كلمة المرور" autocomplete="current-password" />
+        <p id="passwordError" class="smalltext" style="color:var(--red); display:none;">كلمة المرور غير صحيحة، حاول مرة أخرى.</p>
+        <button class="primary" style="width:100%; margin-top:12px;" onclick="verifyAdminPassword()">تسجيل الدخول</button>
+        <p class="smalltext" style="margin-top:12px;">الافتراضي: 1234</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="modalback" id="cartModal">
+    <section class="modal">
+      <div class="modalhead">
+        <h2>🧺 سلة المشتريات</h2>
+        <button class="x" onclick="closeModal('cartModal')">✕</button>
+      </div>
+      <div id="cartItems"></div>
+      <div class="cart-total">
+        <span>الإجمالي:</span>
+        <span id="modalTotal">0 ل.س</span>
+      </div>
+      <button class="primary" style="width:100%; margin-top:16px;" onclick="clearCart()">إفراغ السلة</button>
+    </section>
+  </div>
+
+  <div class="modalback" id="scannerModal">
+    <section class="modal">
+      <div class="modalhead">
+        <h2>▦ قراءة الباركود</h2>
+        <button class="x" onclick="stopScanner()">✕</button>
+      </div>
+      <p class="smalltext">إذا كان المتصفح يدعمBarcodeDetector فسيتم قراءة الباركود مباشرة، وإذا لم يكن يدعمها يمكن إدخال الرقم يدويًا.</p>
+      <div class="searchrow">
+        <input id="manualBarcode" class="field" placeholder="اكتب الباركود يدويًا" inputmode="numeric" />
+        <button class="primary" onclick="useBarcode()">تأكيد</button>
+      </div>
+      <button class="secondary" style="width:100%;" onclick="startScanner()">بدء الكاميرا</button>
+      <video id="video" playsinline hidden></video>
+      <p id="scanStatus" class="smalltext" style="margin-top:12px;">جاهز للبحث</p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script>
+    const KEY = 'baqalati_local_v1';
+    const seed = [
+      { id: 's1', name: 'رز', price: 18000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🍚' },
+      { id: 's2', name: 'سكر', price: 14000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 's3', name: 'زيت نباتي', price: 28000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 's4', name: 'شاي', price: 22000, category: 'مشروبات', barcode: '', stock: '', emoji: '🍵' },
+      { id: 's5', name: 'حليب', price: 9000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 's6', name: 'لبنة', price: 12000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧀' },
+      { id: 's7', name: 'مياه', price: 3000, category: 'مشروبات', barcode: '', stock: '', emoji: '💧' },
+      { id: 's8', name: 'عصير', price: 6000, category: 'مشروبات', barcode: '', stock: '', emoji: '🧃' },
+      { id: 's9', name: 'بسكويت', price: 4000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍪' },
+      { id: 's10', name: 'شوكولا', price: 7000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍫' },
+      { id: 's11', name: 'سائل جلي', price: 10000, category: 'منظفات', barcode: '', stock: '', emoji: '🧴' },
+      { id: 's12', name: 'معجون بندورة', price: 5000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto13', name: 'رز مصري', price: 18000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🍚' },
+      { id: 'auto14', name: 'رز بسمتي', price: 32000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🍚' },
+      { id: 'auto15', name: 'برغل ناعم', price: 12000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🌾' },
+      { id: 'auto16', name: 'برغل خشن', price: 12000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🌾' },
+      { id: 'auto17', name: 'عدس أحمر', price: 15000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫘' },
+      { id: 'auto18', name: 'عدس أسود', price: 16000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫘' },
+      { id: 'auto19', name: 'حمص حب', price: 17000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫘' },
+      { id: 'auto20', name: 'فاصولياء بيضاء', price: 22000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫘' },
+      { id: 'auto21', name: 'فريكة', price: 25000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🌾' },
+      { id: 'auto22', name: 'طحين', price: 10000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🌾' },
+      { id: 'auto23', name: 'سميد', price: 9000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🌾' },
+      { id: 'auto24', name: 'نشا', price: 7000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto25', name: 'معكرونة', price: 8000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🍝' },
+      { id: 'auto26', name: 'شعيرية', price: 6000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🍝' },
+      { id: 'auto27', name: 'ملح', price: 3000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto28', name: 'فلفل أسود', price: 9000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto29', name: 'كمون', price: 7000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto30', name: 'بهارات مشكلة', price: 10000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto31', name: 'كركم', price: 7000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto32', name: 'قرفة', price: 8000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto33', name: 'سكر ناعم', price: 15000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto34', name: 'دبس رمان', price: 18000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto35', name: 'خل أبيض', price: 6000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto36', name: 'زيت زيتون', price: 65000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫒' },
+      { id: 'auto37', name: 'زيت ذرة', price: 30000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto38', name: 'سمنة نباتية', price: 25000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🧈' },
+      { id: 'auto39', name: 'طحينة', price: 22000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto40', name: 'دبس فليفلة', price: 16000, category: 'مواد غذائية', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto41', name: 'حليب طويل الأجل', price: 9000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 'auto42', name: 'حليب بودرة', price: 45000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 'auto43', name: 'لبن', price: 7000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 'auto44', name: 'لبن عيران', price: 5000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 'auto45', name: 'لبنة بلدية', price: 18000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧀' },
+      { id: 'auto46', name: 'جبنة بيضاء', price: 25000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧀' },
+      { id: 'auto47', name: 'جبنة قشقوان', price: 55000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧀' },
+      { id: 'auto48', name: 'جبنة مثلثات', price: 15000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧀' },
+      { id: 'auto49', name: 'زبدة', price: 22000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🧈' },
+      { id: 'auto50', name: 'قشطة', price: 12000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥛' },
+      { id: 'auto51', name: 'بيض', price: 22000, category: 'ألبان وأجبان', barcode: '', stock: '', emoji: '🥚' },
+      { id: 'auto52', name: 'مياه صغيرة', price: 2000, category: 'مشروبات', barcode: '', stock: '', emoji: '💧' },
+      { id: 'auto53', name: 'مياه كبيرة', price: 4000, category: 'مشروبات', barcode: '', stock: '', emoji: '💧' },
+      { id: 'auto54', name: 'كولا', price: 6000, category: 'مشروبات', barcode: '', stock: '', emoji: '🥤' },
+      { id: 'auto55', name: 'ليموناضة', price: 6000, category: 'مشروبات', barcode: '', stock: '', emoji: '🥤' },
+      { id: 'auto56', name: 'عصير برتقال', price: 7000, category: 'مشروبات', barcode: '', stock: '', emoji: '🧃' },
+      { id: 'auto57', name: 'عصير تفاح', price: 7000, category: 'مشروبات', barcode: '', stock: '', emoji: '🧃' },
+      { id: 'auto58', name: 'شراب مركز', price: 18000, category: 'مشروبات', barcode: '', stock: '', emoji: '🧃' },
+      { id: 'auto59', name: 'قهوة سريعة', price: 25000, category: 'مشروبات', barcode: '', stock: '', emoji: '☕' },
+      { id: 'auto60', name: 'قهوة مطحونة', price: 30000, category: 'مشروبات', barcode: '', stock: '', emoji: '☕' },
+      { id: 'auto61', name: 'نسكافيه', price: 22000, category: 'مشروبات', barcode: '', stock: '', emoji: '☕' },
+      { id: 'auto62', name: 'شاي أخضر', price: 18000, category: 'مشروبات', barcode: '', stock: '', emoji: '🍵' },
+      { id: 'auto63', name: 'متة', price: 20000, category: 'مشروبات', barcode: '', stock: '', emoji: '🍵' },
+      { id: 'auto64', name: 'كاكاو', price: 15000, category: 'مشروبات', barcode: '', stock: '', emoji: '☕' },
+      { id: 'auto65', name: 'تونة', price: 18000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto66', name: 'سردين', price: 12000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto67', name: 'فول مدمس', price: 7000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto68', name: 'حمص معلب', price: 8000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto69', name: 'ذرة معلبة', price: 9000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto70', name: 'فطر معلب', price: 12000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto71', name: 'بازلاء معلبة', price: 8000, category: 'معلبات', barcode: '', stock: '', emoji: '🥫' },
+      { id: 'auto72', name: 'زيتون أخضر', price: 15000, category: 'معلبات', barcode: '', stock: '', emoji: '🫒' },
+      { id: 'auto73', name: 'مخلل خيار', price: 10000, category: 'معلبات', barcode: '', stock: '', emoji: '🥒' },
+      { id: 'auto74', name: 'كاتشب', price: 10000, category: 'معلبات', barcode: '', stock: '', emoji: '🍅' },
+      { id: 'auto75', name: 'مايونيز', price: 14000, category: 'معلبات', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto76', name: 'خردل', price: 9000, category: 'معلبات', barcode: '', stock: '', emoji: '🫙' },
+      { id: 'auto77', name: 'مرق دجاج مكعبات', price: 6000, category: 'معلبات', barcode: '', stock: '', emoji: '🧂' },
+      { id: 'auto78', name: 'بسكويت سادة', price: 4000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍪' },
+      { id: 'auto79', name: 'بسكويت محشو', price: 6000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍪' },
+      { id: 'auto80', name: 'ويفر', price: 5000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍫' },
+      { id: 'auto81', name: 'شوكولا بالحليب', price: 8000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍫' },
+      { id: 'auto82', name: 'علكة', price: 2000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍬' },
+      { id: 'auto83', name: 'حلوى جيلي', price: 4000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍬' },
+      { id: 'auto84', name: 'شيبس بطاطا', price: 5000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍟' },
+      { id: 'auto85', name: 'فوشار', price: 5000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍿' },
+      { id: 'auto86', name: 'بزر دوار الشمس', price: 10000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🌻' },
+      { id: 'auto87', name: 'فستق سوداني', price: 12000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🥜' },
+      { id: 'auto88', name: 'تمر', price: 18000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🌴' },
+      { id: 'auto89', name: 'راحة', price: 9000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍬' },
+      { id: 'auto90', name: 'كعك', price: 7000, category: 'سكاكر وتسالي', barcode: '', stock: '', emoji: '🍪' },
+      { id: 'auto91', name: 'سائل جلي', price: 10000, category: 'منظفات', barcode: '', stock: '', emoji: '🧴' },
+      { id: 'auto92', name: 'مسحوق غسيل', price: 25000, category: 'منظفات', barcode: '', stock: '', emoji: '🧺' },
+      { id: 'auto93', name: 'منعم أقمشة', price: 18000, category: 'منظفات', barcode: '', stock: '', emoji: '🧴' },
+      { id: 'auto94', name: 'كلور', price: 7000, category: 'منظفات', barcode: '', stock: '', emoji: '🧴' },
+      { id: 'auto95', name: 'منظف أرضيات', price: 12000, category: 'منظفات', barcode: '', stock: '', emoji: '🧹' },
+      { id: 'auto96', name: 'منظف زجاج', price: 10000, category: 'منظفات', barcode: '', stock: '', emoji: '🪟' },
+      { id: 'auto97', name: 'إسفنجة جلي', price: 3000, category: 'منظفات', barcode: '', stock: '', emoji: '🧽' },
+      { id: 'auto98', name: 'أكياس قمامة', price: 6000, category: 'منظفات', barcode: '', stock: '', emoji: '🗑️' },
+      { id: 'auto99', name: 'مناديل ورقية', price: 8000, category: 'منظفات', barcode: '', stock: '', emoji: '🧻' },
+      { id: 'auto100', name: 'ورق تواليت', price: 12000, category: 'منظفات', barcode: '', stock: '', emoji: '🧻' },
+      { id: 'auto101', name: 'صابون يدين', price: 7000, category: 'منظفات', barcode: '', stock: '', emoji: '🧼' },
+      { id: 'auto102', name: 'شامبو', price: 18000, category: 'منظفات', barcode: '', stock: '', emoji: '🧴' },
+      { id: 'auto103', name: 'معجون أسنان', price: 12000, category: 'منظفات', barcode: '', stock: '', emoji: '🪥' },
+      { id: 'auto104', name: 'فرشاة أسنان', price: 6000, category: 'منظفات', barcode: '', stock: '', emoji: '🪥' },
+      { id: 'auto105', name: 'حفاضات أطفال', price: 45000, category: 'منظفات', barcode: '', stock: '', emoji: '👶' },
+      { id: 'auto106', name: 'فوط صحية', price: 18000, category: 'منظفات', barcode: '', stock: '', emoji: '🧼' },
+      { id: 'auto107', name: 'تفاح', price: 10000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍎' },
+      { id: 'auto108', name: 'موز', price: 12000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍌' },
+      { id: 'auto109', name: 'برتقال', price: 9000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍊' },
+      { id: 'auto110', name: 'ليمون', price: 8000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍋' },
+      { id: 'auto111', name: 'بطاطا', price: 6000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🥔' },
+      { id: 'auto112', name: 'بندورة', price: 7000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍅' },
+      { id: 'auto113', name: 'خيار', price: 7000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🥒' },
+      { id: 'auto114', name: 'بصل', price: 5000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🧅' },
+      { id: 'auto115', name: 'ثوم', price: 15000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🧄' },
+      { id: 'auto116', name: 'جزر', price: 6000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🥕' },
+      { id: 'auto117', name: 'خس', price: 5000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🥬' },
+      { id: 'auto118', name: 'فليفلة', price: 9000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🫑' },
+      { id: 'auto119', name: 'عنب', price: 14000, category: 'خضار وفواكه', barcode: '', stock: '', emoji: '🍇' },
+      { id: 'auto120', name: 'خبز عربي', price: 3000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🫓' },
+      { id: 'auto121', name: 'توست', price: 7000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🍞' },
+      { id: 'auto122', name: 'كعك بالسمسم', price: 8000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🥯' },
+      { id: 'auto123', name: 'كرواسان', price: 6000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🥐' },
+      { id: 'auto124', name: 'خميرة فورية', price: 5000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto125', name: 'بيكنغ باودر', price: 4000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto126', name: 'فانيليا', price: 3000, category: 'مخبوزات', barcode: '', stock: '', emoji: '🛍️' },
+      { id: 'auto127', name: 'بطاريات', price: 8000, category: 'أخرى', barcode: '', stock: '', emoji: '🔋' },
+      { id: 'auto128', name: 'ولاعة', price: 3000, category: 'أخرى', barcode: '', stock: '', emoji: '🔥' },
+      { id: 'auto129', name: 'أكواب بلاستيك', price: 5000, category: 'أخرى', barcode: '', stock: '', emoji: '🥤' },
+      { id: 'auto130', name: 'أطباق بلاستيك', price: 6000, category: 'أخرى', barcode: '', stock: '', emoji: '🍽️' },
+      { id: 'auto131', name: 'ورق ألمنيوم', price: 10000, category: 'أخرى', barcode: '', stock: '', emoji: '🧻' },
+      { id: 'auto132', name: 'نايلون تغليف', price: 7000, category: 'أخرى', barcode: '', stock: '', emoji: '🛍️' }
+    ];
+
+    let state = load();
+    let activeCat = 'الكل';
+    let adminAuthenticated = false;
+    let stream = null;
+    let scanTimer = null;
+
+    function load() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(KEY));
+        if (saved && Array.isArray(saved.products)) {
+          const byId = new Map(seed.map(p => [p.id, { ...p }]));
+          saved.products.forEach(p => byId.set(p.id, { ...byId.get(p.id), ...p }));
+          return {
+            storeName: saved.storeName || 'بقالتي',
+            products: Array.from(byId.values()),
+            cart: saved.cart || {},
+            adminPassword: saved.adminPassword || '1234'
+          };
+        }
+      } catch (e) {}
+
+      return {
+        storeName: 'بقالتي',
+        products: seed.map(p => ({ ...p })),
+        cart: {},
+        adminPassword: '1234'
+      };
+    }
+
+    function persist() {
+      localStorage.setItem(KEY, JSON.stringify(state));
+    }
+
+    function money(n) {
+      return Number(n || 0).toLocaleString('en-US') + ' ل.س';
+    }
+
+    function esc(s) {
+      return String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+    }
+
+    function toast(t) {
+      const e = document.getElementById('toast');
+      if (!e) return;
+      e.textContent = t;
+      e.style.display = 'block';
+      clearTimeout(e._timer);
+      e._timer = setTimeout(() => e.style.display = 'none', 2300);
+    }
+
+    function countLowStock() {
+      return state.products.filter(p => {
+        const stock = Number(p.stock || 0);
+        return Number.isFinite(stock) && stock > 0 && stock <= 5;
+      }).length;
+    }
+
+    function cartTotal() {
+      return Object.entries(state.cart || {}).reduce((sum, [id, qty]) => {
+        const product = state.products.find(p => p.id === id);
+        return sum + (product ? Number(product.price) * Number(qty || 0) : 0);
+      }, 0);
+    }
+
+    function cartCount() {
+      return Object.values(state.cart || {}).reduce((sum, qty) => sum + Number(qty || 0), 0);
+    }
+
+    function renderStats() {
+      document.getElementById('storeTitle').textContent = state.storeName || 'بقالتي';
+      document.getElementById('statsProducts').textContent = state.products.length;
+      document.getElementById('statsCart').textContent = cartCount();
+      document.getElementById('statsTotal').textContent = money(cartTotal());
+      document.getElementById('statsLowStock').textContent = countLowStock();
+      document.getElementById('productCount').textContent = state.products.length;
+      document.getElementById('cartCount').textContent = cartCount();
+      document.getElementById('cartTotal').textContent = money(cartTotal());
+      document.getElementById('bottomTotal').textContent = money(cartTotal());
+    }
+
+    function renderCategories() {
+      const categories = ['الكل', ...new Set(state.products.map(p => p.category).filter(Boolean))];
+      const html = categories.map(cat => `
+        <button class="chip ${cat === activeCat ? 'active' : ''}" onclick="setCat('${cat}')">${esc(cat)}</button>
+      `).join('');
+      document.getElementById('categories').innerHTML = html;
+    }
+
+    function renderProducts() {
+      const q = (document.getElementById('search').value || '').trim().toLowerCase();
+      let items = state.products.filter(p => {
+        const matchesCat = activeCat === 'الكل' || p.category === activeCat;
+        const matchesQuery = !q || p.name.toLowerCase().includes(q) || String(p.barcode || '').includes(q);
+        return matchesCat && matchesQuery;
+      });
+
+      const html = items.length
+        ? items.map(p => `
+          <article class="product">
+            <div class="emoji">${p.emoji || '🛍️'}</div>
+            <h3>${esc(p.name)}</h3>
+            <div class="meta">${esc(p.category || 'أخرى')}</div>
+            <div class="small">${p.stock !== '' && p.stock !== null ? `المخزون: ${p.stock}` : 'لا يوجد رصيد محدد'}</div>
+            <div class="price">${money(p.price)}</div>
+            <div class="actions">
+              <button class="add" onclick="addCart('${p.id}')">+ إضافة</button>
+              <button class="edit" title="تعديل" onclick="editProduct('${p.id}')">✎</button>
+            </div>
+          </article>
+        `).join('')
+        : '<div class="empty">لا توجد نتائج مطابقة، جرّب تغيير كلمة البحث أو القسم.</div>';
+
+      document.getElementById('products').innerHTML = html;
+    }
+
+    function renderAdmin() {
+      const list = state.products.length
+        ? state.products.map(p => `
+          <div class="listrow">
+            <div style="min-width:0;">
+              <strong>${esc(p.emoji || '🛍️')} ${esc(p.name)}</strong>
+              <div class="smalltext">${money(p.price)} • ${esc(p.category || 'أخرى')} • ${p.barcode ? 'باركود: ' + esc(p.barcode) : 'بدون باركود'}</div>
+            </div>
+            <div class="actions-row" style="margin-top:0;">
+              <button class="secondary" onclick="editProduct('${p.id}')">تعديل</button>
+              <button class="danger" onclick="deleteProduct('${p.id}')">حذف</button>
+            </div>
+          </div>
+        `).join('')
+        : '<p class="smalltext">لا توجد مواد مسجلة حتى الآن.</p>';
+
+      document.getElementById('adminList').innerHTML = list;
+    }
+
+    function renderCart() {
+      const entries = Object.entries(state.cart || {}).filter(([, qty]) => Number(qty) > 0);
+      if (!entries.length) {
+        document.getElementById('cartItems').innerHTML = '<div class="empty" style="padding:18px;">السلة فارغة الآن.</div>';
+        document.getElementById('modalTotal').textContent = '0 ل.س';
+        return;
+      }
+
+      const html = entries.map(([id, qty]) => {
+        const item = state.products.find(p => p.id === id);
+        if (!item) return '';
+        const total = Number(item.price) * Number(qty);
+        return `
+          <div class="cart-line">
+            <div>
+              <strong>${esc(item.name)}</strong>
+              <div class="smalltext">${money(item.price)} / القطعة</div>
+            </div>
+            <div class="qty">
+              <button onclick="changeQty('${id}', -1)">−</button>
+              <span>${qty}</span>
+              <button onclick="changeQty('${id}', 1)">+</button>
+            </div>
+            <div style="font-weight:800; min-width:74px; text-align:left;">${money(total)}</div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartItems').innerHTML = html;
+      document.getElementById('modalTotal').textContent = money(cartTotal());
+    }
+
+    function setCat(cat) {
+      activeCat = cat;
+      render();
+    }
+
+    function addCart(id) {
+      if (!state.cart[id]) state.cart[id] = 0;
+      state.cart[id] += 1;
+      persist();
+      render();
+      renderCart();
+      toast('تمت إضافة المادة إلى السلة');
+    }
+
+    function changeQty(id, delta) {
+      state.cart[id] = (state.cart[id] || 0) + delta;
+      if (state.cart[id] <= 0) delete state.cart[id];
+      persist();
+      render();
+      renderCart();
+    }
+
+    function clearCart() {
+      if (!confirm('هل تريد إفراغ السلة؟')) return;
+      state.cart = {};
+      persist();
+      render();
+      renderCart();
+      toast('تم إفراغ السلة');
+    }
+
+    function openAdmin() {
+      document.getElementById('adminPasswordInput').value = '';
+      document.getElementById('passwordError').style.display = 'none';
+      document.getElementById('passwordModal').classList.add('show');
+    }
+
+    function verifyAdminPassword() {
+      const entered = document.getElementById('adminPasswordInput').value;
+      if (entered === (state.adminPassword || '1234')) {
+        adminAuthenticated = true;
+        closeModal('passwordModal');
+        document.getElementById('storeNameInput').value = state.storeName || 'بقالتي';
+        renderAdmin();
+        document.getElementById('adminModal').classList.add('show');
+        return;
+      }
+      document.getElementById('passwordError').style.display = 'block';
+    }
+
+    function changeAdminPassword() {
+      if (!adminAuthenticated) return toast('تحقق من كلمة المرور أولاً');
+      const oldValue = document.getElementById('oldAdminPassword').value;
+      const newValue = document.getElementById('newAdminPassword').value;
+      const confirmValue = document.getElementById('confirmAdminPassword').value;
+
+      if (oldValue !== (state.adminPassword || '1234')) return toast('كلمة المرور الحالية غير صحيحة');
+      if (!newValue || newValue.length < 4) return toast('كلمة المرور الجديدة يجب أن تكون 4 أحرف أو أكثر');
+      if (newValue !== confirmValue) return toast('تأكيد كلمة المرور غير متطابق');
+
+      state.adminPassword = newValue;
+      persist();
+      ['oldAdminPassword', 'newAdminPassword', 'confirmAdminPassword'].forEach(id => document.getElementById(id).value = '');
+      toast('تم تحديث كلمة المرور بنجاح');
+    }
+
+    function saveStoreName() {
+      state.storeName = (document.getElementById('storeNameInput').value || '').trim() || 'بقالتي';
+      persist();
+      render();
+      toast('تم حفظ اسم المتجر');
+    }
+
+    function saveProduct() {
+      const id = document.getElementById('editId').value;
+      const name = document.getElementById('pName').value.trim();
+      const price = Number(document.getElementById('pPrice').value);
+      const category = document.getElementById('pCategory').value;
+      const barcode = document.getElementById('pBarcode').value.trim();
+      const stock = document.getElementById('pStock').value.trim();
+      const emoji = document.getElementById('pEmoji').value;
+
+      if (!name) return toast('الرجاء إدخال اسم المادة');
+      if (!Number.isFinite(price) || price < 0) return toast('الرجاء إدخال سعر صحيح');
+
+      const product = {
+        id: id || 'p' + Date.now(),
+        name,
+        price,
+        category,
+        barcode,
+        stock,
+        emoji
+      };
+
+      const idx = state.products.findIndex(p => p.id === product.id);
+      if (idx >= 0) state.products[idx] = { ...state.products[idx], ...product };
+      else state.products.push(product);
+
+      persist();
+      resetForm();
+      render();
+      renderAdmin();
+      toast(idx >= 0 ? 'تم تحديث المادة بنجاح' : 'تمت إضافة المادة بنجاح');
+    }
+
+    function editProduct(id) {
+      const p = state.products.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('editId').value = p.id;
+      document.getElementById('pName').value = p.name;
+      document.getElementById('pPrice').value = p.price;
+      document.getElementById('pCategory').value = p.category || 'مواد غذائية';
+      document.getElementById('pBarcode').value = p.barcode || '';
+      document.getElementById('pStock').value = p.stock || '';
+      document.getElementById('pEmoji').value = p.emoji || '🛍️';
+      document.getElementById('formTitle').textContent = '✏️ تعديل مادة موجودة';
+      document.getElementById('adminModal').classList.add('show');
+    }
+
+    function resetForm() {
+      ['editId', 'pName', 'pPrice', 'pBarcode', 'pStock'].forEach(id => document.getElementById(id).value = '');
+      document.getElementById('pCategory').value = 'مواد غذائية';
+      document.getElementById('pEmoji').value = '🛍️';
+      document.getElementById('formTitle').textContent = '➕ إضافة مادة جديدة';
+    }
+
+    function deleteProduct(id) {
+      const p = state.products.find(x => x.id === id);
+      if (!p || !confirm('حذف المادة «' + p.name + '»؟')) return;
+      state.products = state.products.filter(x => x.id !== id);
+      delete state.cart[id];
+      persist();
+      render();
+      renderAdmin();
+      toast('تم حذف المادة');
+    }
+
+    function resetAll() {
+      if (!confirm('سيتم حذف جميع المواد والسلة وإعادة البيانات التجريبية. هل أنت متأكد؟')) return;
+      state = {
+        storeName: 'بقالتي',
+        products: seed.map(p => ({ ...p })),
+        cart: {},
+        adminPassword: '1234'
+      };
+      persist();
+      render();
+      renderAdmin();
+      resetForm();
+      toast('تمت إعادة تعيين البيانات');
+    }
+
+    function openCart() {
+      renderCart();
+      document.getElementById('cartModal').classList.add('show');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+      if (id === 'adminModal') adminAuthenticated = false;
+    }
+
+    function exportData() {
+      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'baqalati-backup.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      toast('تم حفظ نسخة احتياطية');
+    }
+
+    function importData(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const payload = JSON.parse(reader.result);
+          if (!Array.isArray(payload.products)) throw 0;
+          if (!confirm('استبدال بيانات المتجر الحالية بالبيانات المستوردة؟')) return;
+          state = {
+            storeName: payload.storeName || 'بقالتي',
+            products: payload.products,
+            cart: payload.cart || {},
+            adminPassword: payload.adminPassword || '1234'
+          };
+          persist();
+          render();
+          renderAdmin();
+          toast('تم استيراد البيانات بنجاح');
+        } catch {
+          toast('ملف غير صالح');
+        }
+      };
+      reader.readAsText(file);
+      e.target.value = '';
+    }
+
+    function openScanner() {
+      document.getElementById('scannerModal').classList.add('show');
+      document.getElementById('manualBarcode').value = '';
+      document.getElementById('scanStatus').textContent = 'جاهز للبحث';
+    }
+
+    function useBarcode() {
+      const value = (document.getElementById('manualBarcode').value || '').trim();
+      if (!value) return toast('أدخل رقم الباركود');
+      document.getElementById('search').value = value;
+      closeModal('scannerModal');
+      render();
+      const item = state.products.find(p => String(p.barcode || '') === value || String(p.id || '') === value);
+      if (item) toast(`تم العثور على: ${item.name}`);
+      else toast('لا يوجد منتج يطابق هذا الباركود');
+    }
+
+    async function startScanner() {
+      const video = document.getElementById('video');
+      const status = document.getElementById('scanStatus');
+      if (!('BarcodeDetector' in window)) {
+        status.textContent = 'هذا المتصفح لا يدعم مسح الباركود مباشرة. استخدم الإدخال اليدوي.';
+        return;
+      }
+
+      try {
+        stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        video.srcObject = stream;
+        video.hidden = false;
+        video.play();
+
+        const detector = new BarcodeDetector({ formats: ['ean_13', 'ean_8', 'upc_a', 'upc_e', 'code_128', 'qr_code'] });
+        status.textContent = 'جاري فحص الكود…';
+
+        scanTimer = setInterval(async () => {
+          try {
+            const codes = await detector.detect(video);
+            if (!codes.length) return;
+            const value = codes[0].rawValue;
+            document.getElementById('manualBarcode').value = value;
+            stopScanner(false);
+            useBarcode();
+          } catch {} 
+        }, 450);
+      } catch (e) {
+        status.textContent = 'تعذر الوصول إلى الكاميرا. حاول مرة أخرى أو استخدم الإدخال اليدوي.';
+      }
+    }
+
+    function stopScanner(close = true) {
+      if (scanTimer) clearInterval(scanTimer);
+      scanTimer = null;
+      if (stream) {
+        stream.getTracks().forEach(track => track.stop());
+        stream = null;
+      }
+      const video = document.getElementById('video');
+      if (video) {
+        video.pause();
+        video.srcObject = null;
+        video.hidden = true;
+      }
+      if (close) closeModal('scannerModal');
+    }
+
+    document.querySelectorAll('.modalback').forEach(modal => {
+      modal.addEventListener('click', e => {
+        if (e.target === modal) {
+          if (modal.id === 'scannerModal') stopScanner();
+          else modal.classList.remove('show');
+        }
+      });
+    });
+
+    document.getElementById('storeNameInput').value = state.storeName || 'بقالتي';
+    render();
+  </script>
 </body>
 </html>
